@@ -9,12 +9,5 @@ class Party(models.Model):
 
 class Character(model.Model):
 	dm = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-	party = models.ForeignKey(Party)
-	name = CharField(max_length=100)
-	race = CharField(max_length=50)
-	char_class = CharField(max_length=50)
-	background = CharField(max_length=50)
-	alignment = CharField(max_length=25)
-	armor_class = PositiveSmallIntegerField()
-	passive_perception = PositiveSmallIntegerField()
-	spell_dc = PositiveSmallIntegerField()
+	party = models.ForeignKey(Party, null=True, blank=True)
+	info = JSONField()
