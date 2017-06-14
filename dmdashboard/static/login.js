@@ -1,20 +1,29 @@
+var csrftoken = getCookie('csrftoken');
+
 $('#login-form').submit(function(e) {
     e.preventDefault();
-    console.log('logged in');
+    console.log('logging in');
     log_in();
 });
 
+if ($('#bad-login').is(":empty")) {
+    $("#bad-login").hide();
+}
+
+$("#register-form").submit(function(e) {
+	e.preventDefault();
+	console.log("registering");
+    if($("#input2").val() != $("#checkinput").val()){
+        console.log('password mismatch')
+    }
+    else {
+	   register_user();
+    }
+})
+
 function log_in() {
 
-	var csrftoken = getCookie('csrftoken');
-
-	$.ajaxSetup({ 
-		beforeSend: function(xhr, settings) { 
-			if (!csrfSafeMethod(settings.type) && !this.crossDomain) { 
-				xhr.setRequestHeader("X-CSRFToken", csrftoken); 
-			} 
-		} 
-	});
+	setupAjax();
 
 	$.ajax({
     	url: "/login/",
@@ -24,13 +33,47 @@ function log_in() {
     		secret: $('#input2').val()
     	},
     	success: function(response){
-    		console.log(response);
+    		if (response) {
+                $("#bad-login").html(response);
+                $("#bad-login").show();
+            }
     	},
     	error: function(xhr, errmsg, err) {
     		console.log(xhr.responseText);
     	}
 
     })
+}
+
+function register_user() {
+
+	setupAjax();
+
+	$.ajax({
+		url: "/register/",
+		type: "POST",
+		data: {
+			email: $('#email').val(),
+    		secret: $('#input2').val(),
+    		secretCheck: $("#checkinput").val()
+		},
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(xhr, errmsg, err) {
+            console.log(errmsg);
+        }
+	});
+}
+
+function setupAjax() {
+	$.ajaxSetup({ 
+		beforeSend: function(xhr, settings) { 
+			if (!csrfSafeMethod(settings.type) && !this.crossDomain) { 
+				xhr.setRequestHeader("X-CSRFToken", csrftoken); 
+			} 
+		} 
+	});
 }
 
 function getCookie(name) {

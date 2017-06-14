@@ -5,7 +5,7 @@
 	<div class="row">
 		<div class="col-lg-6 ml-auto mr-auto">
 			<div id="bad-login" class="card text-white card-danger text-center"></div>
-			<form id="login-form">
+			<form id="register-form">
 			  <div class="form-group">
 			    <label for="email">Email</label>
 			    <input type="email" class="form-control" id="email" placeholder="Example input">
@@ -14,8 +14,13 @@
 			    <label for="input2">Password</label>
 			    <input type="password" class="form-control" id="input2" placeholder="Another input">
 			  </div>
-			  <button type="submit" class="btn btn-primary">Log In</button>
+			  <div class="form-group">
+			    <label for="checkinput">Re-Enter Password</label>
+			    <input type="password" class="form-control" id="checkinput" placeholder="Another input">
+			  </div>
+			  <button type="submit" class="btn btn-primary">Register</button>
 			</form>
+			{{ requirements|safe }}
 		</div>
 	</div>
 </div>
