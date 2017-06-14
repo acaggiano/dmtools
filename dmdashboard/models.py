@@ -7,7 +7,7 @@ class Party(models.Model):
 	name = models.CharField(max_length=100)
 
 
-class Character(model.Model):
+class Character(models.Model):
 	dm = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	party = models.ForeignKey(Party, null=True, blank=True)
-	info = JSONField()
+	# info = JSONField()

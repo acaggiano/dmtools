@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # My Apps
+    'dmdashboard',
+    
+    # Other Apps
     'custom_user'
 ]
 
