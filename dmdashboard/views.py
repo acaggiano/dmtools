@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect
 
+from .models import Party, Character
+
 from django.contrib.auth import get_user_model, authenticate, login, logout, password_validation
 from django.contrib.auth.decorators import login_required
 from django.core.validators import validate_email
@@ -24,9 +26,21 @@ def dashboard(request):
 
 	parties = Party.objects.filter(dm=user)
 
-	context = { 'user': user
+	include_parties_js = True
+
+	context = { 'user': user, 'parties': parties, 'include_parties_js': include_parties_js
 	}
 	return render(request, 'dmdashboard/dashboard.html', context)
+
+@login_required
+def create_party(request):
+	user = request.user
+	party_name = request.POST['party_name']
+
+	new_party = Party(dm=user, name=party_name)
+	new_party.save()
+
+	return HttpResponse('New Party Created')
 
 def login_view(request):
 	if request.user.is_authenticated():
@@ -34,7 +48,9 @@ def login_view(request):
 	else:
 		if request.method != 'POST':
 			# No data submitted, serve login template
-			return render(request, 'dmdashboard/login.html')
+			include_login_js = True
+			context = {'include_login_js': include_login_js}
+			return render(request, 'dmdashboard/login.html', context)
 		else:
 			email = request.POST['email']
 			password = request.POST['secret']
@@ -64,8 +80,11 @@ def register(request):
 		return HttpResponseRedirect(reverse('dashboard'))
 	else:
 		if request.method != 'POST':
-			context = {'requirements': password_validation.password_validators_help_text_html }
-			return render(request, 'dmdashboard/register.html', context)
+			include_login_js = True
+			context = {'requirements': password_validation.password_validators_help_text_html, 'include_login_js': include_login_js }
+			
+			
+			return render(request, 'dmdashboard/login.html', context)
 		else:
 			email = request.POST['email']
 			password = request.POST['secret']
