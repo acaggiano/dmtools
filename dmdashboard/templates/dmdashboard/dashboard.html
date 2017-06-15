@@ -1,3 +1,5 @@
 {% extends 'dmdashboard/base.html' %}
 
-<p>YOU ARE LOGGED IN!</p>
+{% block content %}
+<h3>Hello, {{ user }}</h3>
+{% endblock %}

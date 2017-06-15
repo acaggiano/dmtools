@@ -6,6 +6,7 @@
 		<div class="col-lg-6 ml-auto mr-auto">
 			<div id="bad-login" class="card text-white card-danger text-center"></div>
 			<form id="register-form">
+				{% csrf_token %}
 			  <div class="form-group">
 			    <label for="email">Email</label>
 			    <input type="email" class="form-control" id="email" placeholder="email@example.com" required>
