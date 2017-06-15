@@ -61,7 +61,7 @@ function register_user() {
             console.log(response);
         },
         error: function(xhr, errmsg, err) {
-            console.log(errmsg);
+            console.log(xhr.responseText);
         }
 	});
 }

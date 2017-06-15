@@ -12,9 +12,12 @@ from django.core.exceptions import ValidationError
 def index(request):
 	""" Homepage for DM Tools """
 	if request.user.is_authenticated():
-		pass
+		return HttpResponseRedirect(reverse('dashboard'))
 	else:
 		return render(request, 'dmdashboard/index.html')
+
+def dashboard(request):
+	return render(request, 'dmdashboard/dashboard.html')
 
 def login_view(request):
 	if request.method != 'POST':
@@ -63,10 +66,14 @@ def register(request):
 
 		if validate_email and valid_password:
 			User = get_user_model()
-			user = User.objects.create_user(email, password)
-			login(request, user)
-			return HttpResponseRedirect(reverse('index'))
+			try:
+				user = User.objects.create_user(email, password)
+				login(request, user)
+				return HttpResponseRedirect(reverse('index'))
+			except IntegrityError:
+				return HttpResponse('This email is already tied to an account')
 
+			
 
 
 
