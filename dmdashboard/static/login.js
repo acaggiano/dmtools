@@ -14,7 +14,8 @@ $("#register-form").submit(function(e) {
 	e.preventDefault();
 	console.log("registering");
     if($("#input2").val() != $("#checkinput").val()){
-        console.log('password mismatch')
+        $("#bad-login").html('Your passwords do not match!');
+        $("#bad-login").show();
     }
     else {
 	   register_user();
@@ -33,13 +34,12 @@ function log_in() {
     		secret: $('#input2').val()
     	},
     	success: function(response){
-    		if (response) {
-                $("#bad-login").html(response);
-                $("#bad-login").show();
-            }
+            window.location = response.url;
+    		
     	},
     	error: function(xhr, errmsg, err) {
-    		console.log(xhr.responseText);
+            $("#bad-login").html(xhr.responseText);
+            $("#bad-login").show();
     	}
 
     })
@@ -58,10 +58,11 @@ function register_user() {
     		secretCheck: $("#checkinput").val()
 		},
         success: function(response) {
-            console.log(response);
+            window.location = response.url;
         },
         error: function(xhr, errmsg, err) {
-            console.log(xhr.responseText);
+            $("#bad-login").html(xhr.responseText);
+            $("#bad-login").show();
         }
 	});
 }

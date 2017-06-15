@@ -5,8 +5,10 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import get_user_model, authenticate, login, logout, password_validation
 from django.contrib.auth.decorators import login_required
 from django.core.validators import validate_email
+import json
 
 from django.core.exceptions import ValidationError
+from django.db import IntegrityError
 
 # Create your views here.
 def index(request):
@@ -16,6 +18,7 @@ def index(request):
 	else:
 		return render(request, 'dmdashboard/index.html')
 
+@login_required
 def dashboard(request):
 	return render(request, 'dmdashboard/dashboard.html')
 
@@ -27,13 +30,20 @@ def login_view(request):
 		email = request.POST['email']
 		password = request.POST['secret']
 
+		if not email or not password:
+			response = HttpResponse('Please fill out all fields!')
+			response.status_code = 401
+			return response
+
 		user = authenticate(request, email=email, password=password)
 		if user is not None:
 			login(request, user)
-			return HttpResponseRedirect(reverse('index'))
-
+			response = {'status': 202, 'url':'/dashboard'}
+			return HttpResponse(json.dumps(response), content_type='application/json')
 		else:
-			return HttpResponse('Could Not Log In, Please check your email and password and try again')
+			response = HttpResponse('Could Not Log In, Please check your email and password and try again')
+			response.status_code = 401
+			return response
 
 def logout_view(request):
 	logout(request)
@@ -49,6 +59,11 @@ def register(request):
 		password = request.POST['secret']
 		password_check = request.POST['secretCheck']
 
+		if not email or not password or not password_check:
+			response = HttpResponse('Please fill out all fields!')
+			response.status_code = 401
+			return response
+
 		try:
 			validate_email(email)
 			valid_email = True
@@ -62,16 +77,21 @@ def register(request):
 				password_validation.validate_password(password)
 				valid_password = True
 			except ValidationError:
-				return HttpResponse('Password does not meet requirements!')
+				response = HttpResponse('Password does not meet requirements!')
+				response.status_code = 401
+				return response
 
 		if validate_email and valid_password:
 			User = get_user_model()
 			try:
 				user = User.objects.create_user(email, password)
 				login(request, user)
-				return HttpResponseRedirect(reverse('index'))
+				response = {'status': 202, 'url':'/dashboard'}
+				return HttpResponse(json.dumps(response), content_type='application/json')
 			except IntegrityError:
-				return HttpResponse('This email is already tied to an account')
+				response = HttpResponse('This email is already tied to an account')
+				response.status_code = 401
+				return response
 
 			
 
