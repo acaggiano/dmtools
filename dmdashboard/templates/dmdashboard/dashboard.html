@@ -1,59 +1,25 @@
 {% extends 'dmdashboard/base.html' %}
 
 {% block content %}
-<!-- Party Modal -->
-<div class="modal fade" id="create-party" tabindex="-1" role="dialog" aria-labelledby="create-party-title" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="create-party-title">Create a new party</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      	<form id="create-party-form">
-			{% csrf_token %}
-			<div class="form-group">
-				<label for="party-name">Party Name</label>
-				<input id="party-name" class="form-control" type="text">
-			</div>
-			<div class="form-group">
-				<button type="submit" class="btn btn-primary">Create</button>
-			</div>
-      	</form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Party Modal -->
-<div class="modal fade" id="create-character" tabindex="-1" role="dialog" aria-labelledby="create-character-title" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="create-character-title">Create a new party</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form id="create-character-form">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="character-name">Character Name</label>
-                <input id="character-name" class="form-control" type="text">
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create</button>
-            </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
+<style type="text/css">
+  .flash {
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    padding: 10px;
+    box-shadow: 2px 2px 2px #333;
+    z-index: 10000;
+    top: 60px;
+  }
+</style>
+{% include 'dmdashboard/partials/party-modal.html' %}
+
+{% include 'dmdashboard/partials/character-modal.html' %}
+
+<div class="flash card col-lg-6 ml-auto mr-auto text-white card-success text-center"></div>
 <h3>Hello, {{ user }}</h3>
 <div class="row">
-    <div class="col">
+    <div id="parties" class="col">
         <h4>Parties</h4>
         <ul>
         	{% for party in parties %}
@@ -63,7 +29,7 @@
         	{% endfor %}
         </ul>
     </div>
-    <div class="col">
+    <div id="characters" class="col">
         <h4>Character</h4>
         <ul>
             {% for character in characters %}

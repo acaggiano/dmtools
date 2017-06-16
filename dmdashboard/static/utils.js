@@ -34,8 +34,8 @@ function csrfSafeMethod(method) {
 
 
 
-if ($('.bad-post').is(":empty")) {
-    $(".bad-post").hide();
+if ($('.flash').is(":empty")) {
+    $(".flash").hide();
 }
 
 // SUBMIT LISTENERS
@@ -49,8 +49,9 @@ $("#register-form").submit(function(e) {
     e.preventDefault();
     console.log("registering");
     if($("#input2").val() != $("#checkinput").val()){
-        $(".bad-post").html('Your passwords do not match!');
-        $(".bad-post").show();
+        $(".flash").html('Your passwords do not match!');
+        $(".flash").addClass('card-danger');
+        $(".flash").show();
     }
     else {
        register_user();
@@ -89,8 +90,9 @@ function log_in() {
             
         },
         error: function(xhr, errmsg, err) {
-            $(".bad-post").html(xhr.responseText);
-            $(".bad-post").show();
+            $(".flash").html(xhr.responseText);
+            $(".flash").addClass('card-danger');
+            $(".flash").show();
         }
 
     })
@@ -113,8 +115,9 @@ function register_user() {
             window.location = response.url;
         },
         error: function(xhr, errmsg, err) {
-            $(".bad-post").html(xhr.responseText);
-            $(".bad-post").show();
+            $(".flash").html(xhr.responseText);
+            $(".flash").addClass('card-danger');
+            $(".flash").show();
         }
     });
 }
@@ -131,10 +134,20 @@ function create_party() {
             party_name: $('#party-name').val(),
         },
         success: function(response) {
-            console.log(response);
+            $(".flash").html(response);
+            $(".flash").removeClass('card-danger');
+            $(".flash").addClass('card-success');
+            $("#create-party").modal('hide');
+            $("#party-name").val("");
+            $(".flash").show().delay(3000).fadeOut();
+            $('#parties').load(' #parties', function(){$(this).children().unwrap()})
         },
         error: function(xhr, errmsg, err) {
-            console.log(xhr.responseText);
+            $(".flash").html($("#party-name").val() + xhr.responseText);
+            $("#party-name").val("");
+            $(".flash").removeClass('card-success');
+            $(".flash").addClass('card-danger');
+            $(".flash").show().delay(3000).fadeOut();;
         }
     })
 }
@@ -149,12 +162,28 @@ function create_character() {
         type: "POST",
         data: {
             character_name: $('#character-name').val(),
+            race: $('#race').val(),
+            char_class: $('#class').val(),
+            background: $('#background').val(),
+            alignment: $('#alignment').val(),
+            armor_class: $('#armor-class').val(),
+            passive_perception: $('#passive-perception').val(),
+            spell_dc: $('#spell-dc').val(),
+
         },
         success: function(response) {
-            console.log(response);
+            $(".flash").html(response);
+            $(".flash").addClass('card-success');
+            $("#create-character").modal('hide');
+            $(".flash").show().delay(3000).fadeOut();
+            $('#characters').load(' #characters', function(){$(this).children().unwrap()})
+            $("#create-character-form")[0].reset();
         },
         error: function(xhr, errmsg, err) {
-            console.log(xhr.responseText);
+            $(".flash").html(xhr.responseText);
+            $(".flash").addClass('card-danger');
+            $(".flash").show().delay(5000).fadeOut();
+            $("#create-character-form")[0].reset();
         }
     })
 }

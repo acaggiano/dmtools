@@ -38,19 +38,70 @@ def create_party(request):
 	party_name = request.POST['party_name']
 
 	new_party = Party(dm=user, name=party_name)
-	new_party.save()
+	try:	
+		new_party.save()
+		return HttpResponse('New Party Created')
+	except IntegrityError:
+		response = HttpResponse(' already exists!')
+		response.status_code = 400
+		return response
 
-	return HttpResponse('New Party Created')
 
 @login_required
 def create_character(request):
 	user = request.user
 	character_name = request.POST['character_name']
+	race = request.POST['race']
+	char_class = request.POST['char_class']
+	background = request.POST['background']
+	alignment = request.POST['alignment']
+	armor_class = request.POST.get('armor_class', None)
+	passive_perception = request.POST.get('passive_perception', None)
+	spell_dc = request.POST.get('spell_dc', None)
 
-	new_character = Character(dm=user, name=character_name)
-	new_character.save()
+	try:
+		if armor_class:
+			armor_class = int(armor_class)
+		else:
+			armor_class = None
+	except ValueError:
+		response = HttpResponse("Armor Class is Invalid!")
+		response.status_code = 400
+		return response
 
-	return HttpResponse('New Character Created')
+	try:
+		if passive_perception:
+			passive_perception = int(passive_perception)
+		else:
+			passive_perception = None
+	except ValueError:
+		response = HttpResponse("Passive Perception is Invalid!")
+		response.status_code = 400
+		return response
+
+	try:
+		if spell_dc:
+			spell_dc = int(spell_dc)
+		else:
+			spell_dc = None
+	except ValueError:
+		response = HttpResponse("Spell Save DC is Invalid!")
+		response.status_code = 400
+		return response
+
+	new_character = Character(dm=user, name=character_name, race=race, char_class=char_class, background=background, 
+		alignment=alignment, armor_class=armor_class, passive_perception=passive_perception, spell_dc=spell_dc)
+
+	try:	
+		new_character.save()
+		return HttpResponse('New Character Created')
+	except IntegrityError:
+		response = HttpResponse(' already exists!')
+		response.status_code = 400
+		return response
+
+	return HttpResponse('UH OH')
+
 
 def login_view(request):
 	if request.user.is_authenticated():
