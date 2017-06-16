@@ -26,9 +26,9 @@ def dashboard(request):
 
 	parties = Party.objects.filter(dm=user)
 
-	include_parties_js = True
+	characters = Character.objects.filter(dm=user)
 
-	context = { 'user': user, 'parties': parties, 'include_parties_js': include_parties_js
+	context = { 'user': user, 'parties': parties, 'characters': characters,
 	}
 	return render(request, 'dmdashboard/dashboard.html', context)
 
@@ -42,15 +42,23 @@ def create_party(request):
 
 	return HttpResponse('New Party Created')
 
+@login_required
+def create_character(request):
+	user = request.user
+	character_name = request.POST['character_name']
+
+	new_character = Character(dm=user, name=character_name)
+	new_character.save()
+
+	return HttpResponse('New Character Created')
+
 def login_view(request):
 	if request.user.is_authenticated():
 		return HttpResponseRedirect(reverse('dashboard'))
 	else:
 		if request.method != 'POST':
 			# No data submitted, serve login template
-			include_login_js = True
-			context = {'include_login_js': include_login_js}
-			return render(request, 'dmdashboard/login.html', context)
+			return render(request, 'dmdashboard/login.html')
 		else:
 			email = request.POST['email']
 			password = request.POST['secret']
@@ -80,8 +88,7 @@ def register(request):
 		return HttpResponseRedirect(reverse('dashboard'))
 	else:
 		if request.method != 'POST':
-			include_login_js = True
-			context = {'requirements': password_validation.password_validators_help_text_html, 'include_login_js': include_login_js }
+			context = {'requirements': password_validation.password_validators_help_text_html,}
 			
 			
 			return render(request, 'dmdashboard/login.html', context)

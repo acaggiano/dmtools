@@ -4,7 +4,7 @@ from django.db import models
 # Create your models here.
 class Party(models.Model):
 	dm = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-	name = models.CharField(max_length=100)
+	name = models.TextField()
 
 	class Meta:
 		verbose_name_plural = "Parties"
@@ -17,4 +17,24 @@ class Party(models.Model):
 class Character(models.Model):
 	dm = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	party = models.ForeignKey(Party, null=True, blank=True)
-	# info = JSONField()
+	name = models.TextField()
+	race = models.TextField(null=True, blank=True)
+	char_class = models.TextField(null=True, blank=True)
+	background = models.TextField(null=True, blank=True)
+
+	ALIGNMENT_CHOICES = (
+		('LG', 'Lawful Good'),
+		('NG', 'Neutral Good'),
+		('CG', 'Chaotic Good'),
+		('LN', 'Lawful Neutral'),
+		('N', 'True Neutral'),
+		('CN', 'Chaotic Neutral'),
+		('LE', 'Lawful Evil'),
+		('NE', 'Neutral Evil'),
+		('CE', 'Chaotic Evil'),
+
+	)
+	alignment = models.TextField(choices=ALIGNMENT_CHOICES, null=True, blank=True)
+	armor_class = models.PositiveSmallIntegerField(null=True, blank=True)
+	passive_perception = models.PositiveSmallIntegerField(null=True, blank=True)
+	spell_dc = models.PositiveSmallIntegerField(null=True, blank=True)

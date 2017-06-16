@@ -62,7 +62,14 @@ $("#create-party-form").submit(function(e) {
     console.log("creating new party");
 
     create_party();
-})
+});
+
+$("#create-character-form").submit(function(e) {
+    e.preventDefault();
+    console.log("creating new character");
+
+    create_character();
+});
 
 // LOGIN AJAX CODE
 
@@ -132,3 +139,22 @@ function create_party() {
     })
 }
 
+// CHARACTER AJAX CODE
+function create_character() {
+
+    setupAjax();
+
+    $.ajax({
+        url: '/create_character/',
+        type: "POST",
+        data: {
+            character_name: $('#character-name').val(),
+        },
+        success: function(response) {
+            console.log(response);
+        },
+        error: function(xhr, errmsg, err) {
+            console.log(xhr.responseText);
+        }
+    })
+}

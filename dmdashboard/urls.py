@@ -7,6 +7,7 @@ urlpatterns = [
 	url('^$', views.index, name='index'),
 	url('^dashboard', views.dashboard, name='dashboard'),
 	url('^create_party', views.create_party),
+	url('^create_character', views.create_character),
 
 	# User URLs
 	url('^login/', views.login_view, name='login'),

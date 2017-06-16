@@ -1,7 +1,7 @@
 {% extends 'dmdashboard/base.html' %}
 
 {% block content %}
-<!-- Modal -->
+<!-- Party Modal -->
 <div class="modal fade" id="create-party" tabindex="-1" role="dialog" aria-labelledby="create-party-title" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -26,12 +26,52 @@
     </div>
   </div>
 </div>
+<!-- Party Modal -->
+<div class="modal fade" id="create-character" tabindex="-1" role="dialog" aria-labelledby="create-character-title" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="create-character-title">Create a new party</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="create-character-form">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="character-name">Character Name</label>
+                <input id="character-name" class="form-control" type="text">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 <h3>Hello, {{ user }}</h3>
-<ul>
-	{% for party in parties %}
-	<li>{{ party.name }}</li>
-	{% empty %}
-	<li>You ain't got no parties</li>
-	{% endfor %}
-</ul>
+<div class="row">
+    <div class="col">
+        <h4>Parties</h4>
+        <ul>
+        	{% for party in parties %}
+        	<li>{{ party.name }}</li>
+        	{% empty %}
+        	<li>You ain't got no parties</li>
+        	{% endfor %}
+        </ul>
+    </div>
+    <div class="col">
+        <h4>Character</h4>
+        <ul>
+            {% for character in characters %}
+            <li>{{ character.name }}</li>
+            {% empty %}
+            <li>You ain't got no characters</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 {% endblock %}
