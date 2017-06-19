@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.urlresolvers import reverse
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 
 from .models import Party, Character
 
@@ -26,9 +26,15 @@ def dashboard(request):
 
 	parties = Party.objects.filter(dm=user)
 
+	active_party = Party.objects.get(active=True)
+
 	characters = Character.objects.filter(dm=user)
 
-	context = { 'user': user, 'parties': parties, 'characters': characters,
+	context = { 
+		'user': user,
+		'active': active_party,
+		'parties': parties, 
+		'characters': characters,
 	}
 	return render(request, 'dmdashboard/dashboard.html', context)
 
@@ -36,16 +42,39 @@ def dashboard(request):
 def create_party(request):
 	user = request.user
 	party_name = request.POST['party_name']
+	if request.POST.get('active') == 'true':
+		party_active = True
+	else:
+		party_active = False
+	characters = request.POST.getlist('characters[]')
 
-	new_party = Party(dm=user, name=party_name)
+	new_party = Party(dm=user, name=party_name, active=party_active)
 	try:	
 		new_party.save()
+
+		for character_id in characters:
+			char = Character.objects.get(pk=character_id)
+			char.party = new_party
+			char.save()
+
 		return HttpResponse('New Party Created')
 	except IntegrityError:
 		response = HttpResponse(' already exists!')
 		response.status_code = 400
 		return response
 
+@login_required
+def get_party_info(request):
+	user = request.user
+	party_name = request.GET['party_name']
+
+	selected_party = Party.objects.get(name=party_name)
+
+	print(selected_party)
+
+@login_required
+def edit_party(request):
+	pass
 
 @login_required
 def create_character(request):

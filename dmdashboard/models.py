@@ -5,6 +5,7 @@ from django.db import models
 class Party(models.Model):
 	dm = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	name = models.TextField()
+	active = models.BooleanField(default=False)
 
 	class Meta:
 		verbose_name_plural = "Parties"
@@ -12,6 +13,17 @@ class Party(models.Model):
 
 	def __str__(self):
 		return self.name
+
+	def save(self, *args, **kwargs):
+		super(Party, self).save()
+
+		if(self.active == True):
+			others = Party.objects.exclude(pk=self.pk)
+
+			for party in others:
+
+				party.active = False
+				party.save()
 
 
 class Character(models.Model):

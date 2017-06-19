@@ -1,0 +1,41 @@
+<!-- Party Modal -->
+<div class="modal fade" id="edit-party" tabindex="-1" role="dialog" aria-labelledby="edit-party-title" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="edit-party-title">Create a new party</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="edit-party-form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-8">
+                            <label for="party-name">Party Name</label>
+                            <input id="party-name" class="form-control" type="text">
+                        </div>
+                        <div class="form-check col-4 align-self-center">
+                            <label for="make-active" class="form-check-label form-control-lg">
+                                <input id="make-active" class="form-check-input" type="checkbox" name="" value="make-active"> Make Active
+                            </label>
+                        </div>
+                    </div>
+                    <div id="character-choices" class="form-group row">
+                        {% for character in characters %}
+                        <div class="form-check col-3">
+                            <label for="{{ character.name }}" class="form-check-label form-control-sm">
+                                <input id="{{ character.name }}" class="form-check-input" type="checkbox" name="" value="{{ character.id }}"> {{ character.name }}
+                            </label>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

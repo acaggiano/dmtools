@@ -23,7 +23,7 @@
         <h4>Parties</h4>
         <ul>
         	{% for party in parties %}
-        	<li>{{ party.name }}</li>
+        	<li>{{ party.name }} {% if party.id == active.id %} - Active {% endif %}</li>
         	{% empty %}
         	<li>You ain't got no parties</li>
         	{% endfor %}

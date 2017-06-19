@@ -72,6 +72,10 @@ $("#create-character-form").submit(function(e) {
     create_character();
 });
 
+$('#create-party').on('show.bs.modal', function(e) {
+    console.log('opened create modal');
+});
+
 // LOGIN AJAX CODE
 
 function log_in() {
@@ -127,11 +131,17 @@ function create_party() {
 
     setupAjax();
 
+    console.log(document.querySelector('#make-active').checked);
+
     $.ajax({
         url: '/create_party/',
         type: "POST",
         data: {
             party_name: $('#party-name').val(),
+            active: document.querySelector('#make-active').checked,
+            characters: $('#character-choices input:checkbox:checked').map(function() {
+                return this.value;
+            }).get(),
         },
         success: function(response) {
             $(".flash").html(response);
@@ -177,6 +187,7 @@ function create_character() {
             $("#create-character").modal('hide');
             $(".flash").show().delay(3000).fadeOut();
             $('#characters').load(' #characters', function(){$(this).children().unwrap()})
+            $('#character-choices').load(' #character-choices', function(){$(this).children().unwrap()})
             $("#create-character-form")[0].reset();
         },
         error: function(xhr, errmsg, err) {
