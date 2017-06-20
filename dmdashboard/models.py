@@ -1,10 +1,12 @@
 from django.conf import settings
 from django.db import models
+from django.utils.text import slugify
 
 # Create your models here.
 class Party(models.Model):
 	dm = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	name = models.TextField()
+	slug = models.TextField(blank=True)
 	active = models.BooleanField(default=False)
 
 	class Meta:
@@ -15,6 +17,7 @@ class Party(models.Model):
 		return self.name
 
 	def save(self, *args, **kwargs):
+		self.slug = slugify(self.name)
 		super(Party, self).save()
 
 		if(self.active == True):

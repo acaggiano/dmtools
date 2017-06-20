@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="edit-party-title">Create a new party</h5>
+                <h5 class="modal-title" id="edit-party-title">Edit party</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -13,12 +13,12 @@
                     {% csrf_token %}
                     <div class="row">
                         <div class="form-group col-8">
-                            <label for="party-name">Party Name</label>
-                            <input id="party-name" class="form-control" type="text">
+                            <label for="edit-party-name">Party Name</label>
+                            <input id="edit-party-name" class="form-control" type="text">
                         </div>
                         <div class="form-check col-4 align-self-center">
-                            <label for="make-active" class="form-check-label form-control-lg">
-                                <input id="make-active" class="form-check-input" type="checkbox" name="" value="make-active"> Make Active
+                            <label for="edit-active" class="form-check-label form-control-lg">
+                                <input id="edit-active" class="form-check-input" type="checkbox" name="" value="edit-active"> Make Active
                             </label>
                         </div>
                     </div>
@@ -26,7 +26,7 @@
                         {% for character in characters %}
                         <div class="form-check col-3">
                             <label for="{{ character.name }}" class="form-check-label form-control-sm">
-                                <input id="{{ character.name }}" class="form-check-input" type="checkbox" name="" value="{{ character.id }}"> {{ character.name }}
+                                <input id="edit-{{ character.name }}" class="form-check-input" type="checkbox" name="" value="edit-{{ character.id }}"> {{ character.name }}
                             </label>
                         </div>
                         {% endfor %}

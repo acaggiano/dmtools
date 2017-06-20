@@ -25,8 +25,11 @@ def dashboard(request):
 	user = request.user
 
 	parties = Party.objects.filter(dm=user)
+	try:
+		active_party = Party.objects.get(active=True)
+	except Party.DoesNotExist:
+		active_party = False
 
-	active_party = Party.objects.get(active=True)
 
 	characters = Character.objects.filter(dm=user)
 
@@ -64,13 +67,21 @@ def create_party(request):
 		return response
 
 @login_required
-def get_party_info(request):
+def get_party_info(request, party_slug):
 	user = request.user
-	party_name = request.GET['party_name']
 
-	selected_party = Party.objects.get(name=party_name)
+	selected_party = Party.objects.get(slug=party_slug)
 
-	print(selected_party)
+	response = {}
+
+	response['party_name'] = selected_party.name
+	response['isActive'] = selected_party.active
+
+	# characters = Character.objects.filter(dm=user, party=selected_party)
+
+	# response['characters'] = characters
+
+	return JsonResponse(response)
 
 @login_required
 def edit_party(request):

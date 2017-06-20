@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'dmdashboard',
     
     # Other Apps
-    'custom_user'
+    'custom_user',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

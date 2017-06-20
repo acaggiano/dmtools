@@ -38,7 +38,7 @@ if ($('.flash').is(":empty")) {
     $(".flash").hide();
 }
 
-// SUBMIT LISTENERS
+// LISTENERS
 $('#login-form').submit(function(e) {
     e.preventDefault();
     console.log('logging in');
@@ -72,8 +72,11 @@ $("#create-character-form").submit(function(e) {
     create_character();
 });
 
-$('#create-party').on('show.bs.modal', function(e) {
-    console.log('opened create modal');
+$('#edit-party').on('show.bs.modal', function(e) {
+    console.log('opened edit modal');
+    var slug = ($(e.relatedTarget).data('slug'));
+
+    get_party_info(slug);
 });
 
 // LOGIN AJAX CODE
@@ -131,8 +134,6 @@ function create_party() {
 
     setupAjax();
 
-    console.log(document.querySelector('#make-active').checked);
-
     $.ajax({
         url: '/create_party/',
         type: "POST",
@@ -158,6 +159,23 @@ function create_party() {
             $(".flash").removeClass('card-success');
             $(".flash").addClass('card-danger');
             $(".flash").show().delay(3000).fadeOut();;
+        }
+    })
+}
+
+function get_party_info(name) {
+    setupAjax();
+
+    $.ajax({
+        url: "/party/" + name,
+        type: "GET",
+        success: function(response) {
+            $('#edit-party-name').val(response.party_name)
+            console.log(response.isActive)
+            $('#edit-active').prop("checked", response.isActive)
+        },
+        error: function(xhr, errmsg, err) {
+            console.log(xhr.responseText);
         }
     })
 }

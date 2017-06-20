@@ -13,6 +13,7 @@
   }
 </style>
 {% include 'dmdashboard/partials/party-modal.html' %}
+{% include 'dmdashboard/partials/edit-party.html' %}
 
 {% include 'dmdashboard/partials/character-modal.html' %}
 
@@ -23,7 +24,7 @@
         <h4>Parties</h4>
         <ul>
         	{% for party in parties %}
-        	<li>{{ party.name }} {% if party.id == active.id %} - Active {% endif %}</li>
+        	<li><a data-toggle="modal" data-target="#edit-party" data-slug="{{ party.slug }}">{{ party.name }}</a> {% if party.id == active.id %} - Active {% endif %}</li>
         	{% empty %}
         	<li>You ain't got no parties</li>
         	{% endfor %}
