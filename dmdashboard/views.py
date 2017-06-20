@@ -67,25 +67,41 @@ def create_party(request):
 		return response
 
 @login_required
-def get_party_info(request, party_slug):
+def edit_party(request, party_slug):
 	user = request.user
-
 	selected_party = Party.objects.get(slug=party_slug)
+	original_name = selected_party.name
 
-	response = {}
+	if request.method != 'POST':
+		response = {}
 
-	response['party_name'] = selected_party.name
-	response['isActive'] = selected_party.active
+		response['party_name'] = selected_party.name
+		response['isActive'] = selected_party.active
 
-	# characters = Character.objects.filter(dm=user, party=selected_party)
+		# characters = Character.objects.filter(dm=user, party=selected_party)
 
-	# response['characters'] = characters
+		# response['characters'] = characters
 
-	return JsonResponse(response)
+		return JsonResponse(response)
+	else:
+		new_name = request.POST['party_name']
+		if request.POST.get('active') == 'true':
+			new_active = True
+		else:
+			new_active = False
 
-@login_required
-def edit_party(request):
-	pass
+		selected_party.name = new_name
+		selected_party.active = new_active
+
+		try:
+			selected_party.save()
+
+			return HttpResponse('Party Edited')
+		except IntegrityError:
+			data = {'message': 'Party Name is Taken!', 'original': original_name}
+			response = JsonResponse(data)
+			response.status_code = 400
+			return response
 
 @login_required
 def create_character(request):

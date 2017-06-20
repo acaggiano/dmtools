@@ -7,7 +7,7 @@ urlpatterns = [
 	url(r'^$', views.index, name='index'),
 	url(r'^dashboard', views.dashboard, name='dashboard'),
 	url(r'^create_party', views.create_party),
-	url(r'^party/(?P<party_slug>[\w-]+)/$', views.get_party_info),
+	url(r'^party/(?P<party_slug>[\w-]+)/$', views.edit_party),
 	url(r'^create_character', views.create_character),
 
 	# User URLs

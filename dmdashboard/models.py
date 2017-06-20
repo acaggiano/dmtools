@@ -11,7 +11,7 @@ class Party(models.Model):
 
 	class Meta:
 		verbose_name_plural = "Parties"
-		unique_together = ('dm', 'name')
+		unique_together = ('dm', 'slug')
 
 	def __str__(self):
 		return self.name

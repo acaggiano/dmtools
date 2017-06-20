@@ -74,9 +74,20 @@ $("#create-character-form").submit(function(e) {
 
 $('#edit-party').on('show.bs.modal', function(e) {
     console.log('opened edit modal');
+    $(".party-link").removeClass("editing");
     var slug = ($(e.relatedTarget).data('slug'));
 
+    $(e.relatedTarget).addClass("editing");
+
     get_party_info(slug);
+});
+
+$("#edit-party-form").submit(function(e) {
+    e.preventDefault();
+    var slug = ($(".editing").data('slug'));
+    console.log("editing party");
+
+    edit_party(slug);
 });
 
 // LOGIN AJAX CODE
@@ -167,7 +178,7 @@ function get_party_info(name) {
     setupAjax();
 
     $.ajax({
-        url: "/party/" + name,
+        url: `/party/${name}/`,
         type: "GET",
         success: function(response) {
             $('#edit-party-name').val(response.party_name)
@@ -176,6 +187,36 @@ function get_party_info(name) {
         },
         error: function(xhr, errmsg, err) {
             console.log(xhr.responseText);
+        }
+    })
+}
+
+function edit_party(name) {
+
+    setupAjax();
+
+    $.ajax({
+        url: `/party/${name}/`,
+        type: "POST",
+        data: {
+            party_name: $('#edit-party-name').val(),
+            active: document.querySelector('#edit-active').checked
+        },
+        success: function(response) {
+            $(".flash").html(response);
+            $(".flash").removeClass('card-danger');
+            $(".flash").addClass('card-success');
+            $("#edit-party").modal('hide');
+            $("#edit-party-name").val("");
+            $(".flash").show().delay(3000).fadeOut();
+            $('#parties').load(' #parties', function(){$(this).children().unwrap()})
+        },
+        error: function(xhr, errmsg, err) {
+            $(".flash").html(xhr.responseJSON.message);
+            $("#edit-party-name").val(xhr.responseJSON.original);
+            $(".flash").removeClass('card-success');
+            $(".flash").addClass('card-danger');
+            $(".flash").show().delay(3000).fadeOut();;
         }
     })
 }
