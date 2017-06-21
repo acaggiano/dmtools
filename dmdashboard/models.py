@@ -33,6 +33,7 @@ class Character(models.Model):
 	dm = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	party = models.ForeignKey(Party, null=True, blank=True)
 	name = models.TextField()
+	slug = models.TextField(blank=True)
 	race = models.TextField(null=True, blank=True)
 	char_class = models.TextField(null=True, blank=True)
 	background = models.TextField(null=True, blank=True)
@@ -53,3 +54,13 @@ class Character(models.Model):
 	armor_class = models.PositiveSmallIntegerField(null=True, blank=True)
 	passive_perception = models.PositiveSmallIntegerField(null=True, blank=True)
 	spell_dc = models.PositiveSmallIntegerField(null=True, blank=True)
+
+	class Meta:
+		unique_together = ('dm', 'slug')
+
+	def __str__(self):
+		return self.name
+
+	def save(self, *args, **kwargs):
+		self.slug = slugify(self.name)
+		super(Character, self).save()

@@ -34,7 +34,7 @@
         <h4>Character</h4>
         <ul>
             {% for character in characters %}
-            <li>{{ character.name }}</li>
+            <li><a data-toggle="modal" data-target="#edit-character" data-slug="{{ character.slug }}" class="character-link">{{ character.name }}</li>
             {% empty %}
             <li>You ain't got no characters</li>
             {% endfor %}

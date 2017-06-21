@@ -205,7 +205,7 @@ def register(request):
 			context = {'requirements': password_validation.password_validators_help_text_html,}
 			
 			
-			return render(request, 'dmdashboard/login.html', context)
+			return render(request, 'dmdashboard/register.html', context)
 		else:
 			email = request.POST['email']
 			password = request.POST['secret']

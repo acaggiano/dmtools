@@ -82,6 +82,16 @@ $('#edit-party').on('show.bs.modal', function(e) {
     get_party_info(slug);
 });
 
+$('#edit-character').on('show.bs.modal', function(e) {
+    console.log('opened character edit modal');
+    $(".character-link").removeClass("editing");
+    var slug = ($(e.relatedTarget).data('slug'));
+
+    $(e.relatedTarget).addClass("editing");
+
+    get_party_info(slug);
+});
+
 $("#edit-party-form").submit(function(e) {
     e.preventDefault();
     var slug = ($(".editing").data('slug'));
