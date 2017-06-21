@@ -90,6 +90,11 @@ $("#edit-party-form").submit(function(e) {
     edit_party(slug);
 });
 
+$('.modal').on('hide.bs.modal', function(e) {
+    this.querySelector('form').reset();
+});
+
+
 // LOGIN AJAX CODE
 
 function log_in() {
@@ -160,7 +165,6 @@ function create_party() {
             $(".flash").removeClass('card-danger');
             $(".flash").addClass('card-success');
             $("#create-party").modal('hide');
-            $("#party-name").val("");
             $(".flash").show().delay(3000).fadeOut();
             $('#parties').load(' #parties', function(){$(this).children().unwrap()})
         },
@@ -181,9 +185,14 @@ function get_party_info(name) {
         url: `/party/${name}/`,
         type: "GET",
         success: function(response) {
-            $('#edit-party-name').val(response.party_name)
-            console.log(response.isActive)
-            $('#edit-active').prop("checked", response.isActive)
+            $('#edit-party-name').val(response.party_name);
+            $('#edit-active').prop("checked", response.isActive);
+            var characterChecks = document.querySelectorAll(".character-check");
+            for(check of characterChecks) {
+                if($.inArray(check.name, response.characters) != -1){
+                    $(check).prop("checked", true);
+                }
+            }
         },
         error: function(xhr, errmsg, err) {
             console.log(xhr.responseText);
@@ -200,7 +209,10 @@ function edit_party(name) {
         type: "POST",
         data: {
             party_name: $('#edit-party-name').val(),
-            active: document.querySelector('#edit-active').checked
+            active: document.querySelector('#edit-active').checked,
+            characters: $('#edit-character-choices input:checkbox:checked').map(function() {
+                return this.value;
+            }).get(),
         },
         success: function(response) {
             $(".flash").html(response);
@@ -247,7 +259,6 @@ function create_character() {
             $(".flash").show().delay(3000).fadeOut();
             $('#characters').load(' #characters', function(){$(this).children().unwrap()})
             $('#character-choices').load(' #character-choices', function(){$(this).children().unwrap()})
-            $("#create-character-form")[0].reset();
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseText);

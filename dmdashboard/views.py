@@ -78,9 +78,9 @@ def edit_party(request, party_slug):
 		response['party_name'] = selected_party.name
 		response['isActive'] = selected_party.active
 
-		# characters = Character.objects.filter(dm=user, party=selected_party)
+		characters = list(Character.objects.filter(dm=user, party=selected_party).values_list('name', flat=True))
 
-		# response['characters'] = characters
+		response['characters'] = characters
 
 		return JsonResponse(response)
 	else:
@@ -89,12 +89,19 @@ def edit_party(request, party_slug):
 			new_active = True
 		else:
 			new_active = False
+		characters = request.POST.getlist('characters[]')
 
 		selected_party.name = new_name
 		selected_party.active = new_active
 
+
 		try:
 			selected_party.save()
+
+			for character_id in characters:
+				char = Character.objects.get(pk=character_id)
+				char.party = selected_party
+				char.save()
 
 			return HttpResponse('Party Edited')
 		except IntegrityError:

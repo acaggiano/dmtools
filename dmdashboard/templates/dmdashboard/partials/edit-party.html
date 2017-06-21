@@ -18,21 +18,26 @@
                         </div>
                         <div class="form-check col-4 align-self-center">
                             <label for="edit-active" class="form-check-label form-control-lg">
-                                <input id="edit-active" class="form-check-input" type="checkbox" name="" value="edit-active"> Make Active
+                                <input id="edit-active" class="form-check-input" type="checkbox" value="edit-active"> Make Active
                             </label>
                         </div>
                     </div>
-                    <div id="character-choices" class="form-group row">
-                        {% for character in characters %}
-                        <div class="form-check col-3">
-                            <label for="{{ character.name }}" class="form-check-label form-control-sm">
-                                <input id="edit-{{ character.name }}" class="form-check-input" type="checkbox" name="" value="edit-{{ character.id }}"> {{ character.name }}
-                            </label>
+                    <fieldset class="form-group">
+                        <legend class="col-form-legend">Characters</legend>
+                        <div id="edit-character-choices" class=" row">
+
+                            {% for character in characters %}
+                            <div class="form-check col-3">
+                                <label for="{{ character.name }}" class="form-check-label form-control-sm">
+                                    <input id="edit-{{ character.name }}" class="form-check-input character-check" type="checkbox" name="{{ character.name }}" value="{{ character.id }}"> {{ character.name }}
+                                </label>
+                            </div>
+                            {% endfor %}
                         </div>
-                        {% endfor %}
-                    </div>
+                    </fieldset>
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Save</button>
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
                     </div>
                 </form>
             </div>
