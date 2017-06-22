@@ -89,15 +89,23 @@ $('#edit-character').on('show.bs.modal', function(e) {
 
     $(e.relatedTarget).addClass("editing");
 
-    get_party_info(slug);
+    get_character_info(slug);
 });
 
 $("#edit-party-form").submit(function(e) {
     e.preventDefault();
-    var slug = ($(".editing").data('slug'));
+    var slug = ($(".party-link.editing").data('slug'));
     console.log("editing party");
 
     edit_party(slug);
+});
+
+$("#edit-character-form").submit(function(e) {
+    e.preventDefault();
+    var slug = ($(".character-link.editing").data('slug'));
+    console.log(`editing character ${slug}`);
+
+    edit_character(slug);
 });
 
 $('.modal').on('hide.bs.modal', function(e) {
@@ -269,6 +277,7 @@ function create_character() {
             $(".flash").show().delay(3000).fadeOut();
             $('#characters').load(' #characters', function(){$(this).children().unwrap()})
             $('#character-choices').load(' #character-choices', function(){$(this).children().unwrap()})
+            $('#edit-character-choices').load(' #edit-character-choices', function(){$(this).children().unwrap()})
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseText);
@@ -278,3 +287,66 @@ function create_character() {
         }
     })
 }
+
+function get_character_info(name) {
+    setupAjax();
+
+    $.ajax({
+        url: `/character/${name}/`,
+        type: "GET",
+        success: function(response) {
+            response = JSON.parse(response);
+            console.log(response)
+            $("#edit-character-name").val(response[0].fields.name);
+            $("#edit-race").val(response[0].fields.race);
+            $("#edit-class").val(response[0].fields.char_class);
+            $("#edit-background").val(response[0].fields.background);
+            $("#edit-alignment").val(response[0].fields.alignment);
+            $("#edit-armor-class").val(response[0].fields.armor_class);
+            $("#edit-passive-perception").val(response[0].fields.passive_perception);
+            $("#edit-spell-dc").val(response[0].fields.spell_dc);
+
+
+
+        },
+        error: function(xhr, errmsg, err) {
+            console.log(xhr.responseText);
+        }
+    })
+}
+
+function edit_character(name) {
+    setupAjax();
+
+    $.ajax({
+        url: `/character/${name}/`,
+        type: 'POST',
+        data: {
+            character_name: $('#edit-character-name').val(),
+            race: $('#edit-race').val(),
+            char_class: $('#edit-class').val(),
+            background: $('#edit-background').val(),
+            alignment: $('#edit-alignment').val(),
+            armor_class: $('#edit-armor-class').val(),
+            passive_perception: $('#edit-passive-perception').val(),
+            spell_dc: $('#edit-spell-dc').val(),
+        },
+        success: function(response) {
+            $(".flash").html(response);
+            $(".flash").addClass('card-success');
+            $("#edit-character").modal('hide');
+            $(".flash").show().delay(3000).fadeOut();
+            $('#characters').load(' #characters', function(){$(this).children().unwrap()})
+            $('#character-choices').load(' #character-choices', function(){$(this).children().unwrap()})
+            $('#edit-character-choices').load(' #edit-character-choices', function(){$(this).children().unwrap()})
+        },
+        error: function(xhr, errmsg, err) {
+            $(".flash").html(xhr.responseJSON.message);
+            $("#edit-party-name").val(xhr.responseJSON.original);
+            $(".flash").addClass('card-danger');
+            $(".flash").show().delay(5000).fadeOut();
+            $("#edit-character-form")[0].reset();
+        }
+    })
+}
+

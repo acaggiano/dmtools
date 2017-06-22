@@ -9,6 +9,7 @@ urlpatterns = [
 	url(r'^create_party', views.create_party),
 	url(r'^party/(?P<party_slug>[\w-]+)/$', views.edit_party),
 	url(r'^create_character', views.create_character),
+	url(r'^character/(?P<character_slug>[\w-]+)/', views.edit_character),
 
 	# User URLs
 	url(r'^login/', views.login_view, name='login'),

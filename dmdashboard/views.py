@@ -2,15 +2,18 @@ from django.shortcuts import render
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 
-from .models import Party, Character
+
 
 from django.contrib.auth import get_user_model, authenticate, login, logout, password_validation
 from django.contrib.auth.decorators import login_required
 from django.core.validators import validate_email
 import json
+from django.core import serializers
 
 from django.core.exceptions import ValidationError
 from django.db import IntegrityError
+
+from .models import Party, Character
 
 # Create your views here.
 def index(request):
@@ -69,7 +72,7 @@ def create_party(request):
 @login_required
 def edit_party(request, party_slug):
 	user = request.user
-	selected_party = Party.objects.get(slug=party_slug)
+	selected_party = Party.objects.get(dm=user, slug=party_slug)
 	original_name = selected_party.name
 
 	if request.method != 'POST':
@@ -164,6 +167,76 @@ def create_character(request):
 		return response
 
 	return HttpResponse('UH OH')
+
+@login_required
+def edit_character(request, character_slug):
+	user = request.user
+	if request.method != 'POST':
+		character_info = serializers.serialize('json', Character.objects.filter(dm=user, slug=character_slug))
+
+		return JsonResponse(character_info, safe=False)
+	else:
+		selected_character = Character.objects.get(dm=user, slug=character_slug)
+		original_name = selected_character.name
+
+		new_name = request.POST['character_name']
+		new_race = request.POST['race']
+		new_char_class = request.POST['char_class']
+		new_background = request.POST['background']
+		new_alignment = request.POST['alignment']
+		new_armor_class = request.POST.get('armor_class', None)
+		new_passive_perception = request.POST.get('passive_perception', None)
+		new_spell_dc = request.POST.get('spell_dc', None)
+
+		try:
+			if new_armor_class:
+				new_armor_class = int(new_armor_class)
+			else:
+				new_armor_class = None
+		except ValueError:
+			response = HttpResponse("Armor Class is Invalid!")
+			response.status_code = 400
+			return response
+
+		try:
+			if new_passive_perception:
+				new_passive_perception = int(new_passive_perception)
+			else:
+				new_passive_perception = None
+		except ValueError:
+			response = HttpResponse("Passive Perception is Invalid!")
+			response.status_code = 400
+			return response
+
+		try:
+			if new_spell_dc:
+				new_spell_dc = int(new_spell_dc)
+			else:
+				new_spell_dc = None
+		except ValueError:
+			response = HttpResponse("Spell Save DC is Invalid!")
+			response.status_code = 400
+			return response
+
+		selected_character.name = new_name
+		selected_character.race = new_race
+		selected_character.char_class = new_char_class
+		selected_character.background = new_background
+		selected_character.alignment = new_alignment
+		selected_character.armor_class = new_armor_class
+		selected_character.passive_perception = new_passive_perception
+		selected_character.spell_dc = new_spell_dc
+
+		try:
+			selected_character.save()
+
+			return HttpResponse("Character Saved")
+		except IntegrityError:
+			data = {'message': 'Character Name is Taken!', 'original': original_name}
+			response = JsonResponse(data)
+			response.status_code = 400
+			return response
+
 
 
 def login_view(request):
