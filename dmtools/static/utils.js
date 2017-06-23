@@ -1,3 +1,13 @@
+$(function () {
+    $('#party-tab a:first').tab('show')
+})
+
+$('#party-tab a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+})
+
+
 var csrftoken = getCookie('csrftoken');
 
 function setupAjax() {

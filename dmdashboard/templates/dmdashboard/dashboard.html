@@ -10,36 +10,97 @@
     box-shadow: 2px 2px 2px #333;
     z-index: 10000;
     top: 60px;
-  }
-</style>
-{% include 'dmdashboard/partials/party-modal.html' %}
-{% include 'dmdashboard/partials/edit-party.html' %}
+}
+li:empty {
+    display: none;
+}
 
-{% include 'dmdashboard/partials/character-modal.html' %}
-{% include 'dmdashboard/partials/edit-character.html' %}
+.card {
+    height: 100%;
+}
+</style>
+
+{% include 'dmdashboard/partials/initiatives.html' %}
+
 
 <div class="flash card col-lg-6 ml-auto mr-auto text-white card-success text-center"></div>
-<h3>Hello, {{ user }}</h3>
-<div class="row">
-    <div id="parties" class="col">
-        <h4>Parties</h4>
-        <ul>
-        	{% for party in parties %}
-        	<li><a data-toggle="modal" data-target="#edit-party" data-slug="{{ party.slug }}" class="party-link">{{ party.name }}</a> {% if party.id == active.id %} - Active {% endif %}</li>
-        	{% empty %}
-        	<li>You ain't got no parties</li>
-        	{% endfor %}
-        </ul>
+
+<section id="main" class="container-fluid">
+    <div class="row">
+        <div class="col py-4">
+            <h3 class="display-4">Hello, {{ user }}</h3>
+        </div>
     </div>
-    <div id="characters" class="col">
-        <h4>Character</h4>
-        <ul>
-            {% for character in characters %}
-            <li><a data-toggle="modal" data-target="#edit-character" data-slug="{{ character.slug }}" class="character-link">{{ character.name }}</li>
-            {% empty %}
-            <li>You ain't got no characters</li>
-            {% endfor %}
-        </ul>
+    <div class="row">
+        <div class="col-7">
+            <div id="parties" class="card">
+                <div class="card-header">
+                    <h4>{{ active.name }}</h4>
+                    {% if active %}
+                    
+                    <ul class="nav nav-tabs card-header-tabs" id="party-tab" role="tablist">
+                    {% for character in active_characters %}
+                      <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#{{character.slug}}" role="tab" aria-controls="{{character.slug}}">{{character.name}}</a>
+                    </li>
+                    {% endfor %} 
+                    </ul>
+                </div>
+                <div class="card-block">
+                    <div class="tab-content">
+                        {% for character in active_characters %}
+                        <div class="tab-pane" id="{{character.slug}}" role="tabpanel">
+                            <div class="row">
+                                <div class="col-6">Race</div>
+                                <div class="col-6">{{ character.race }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Class</div>
+                                <div class="col-6">{{ character.char_class }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Background</div>
+                                <div class="col-6">{{ character.background }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Alignment</div>
+                                <div class="col-6">{{ character.alignment }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Armor Class</div>
+                                <div class="col-6">{{ character.armor_class }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Passive Perception</div>
+                                <div class="col-6">{{ character.passive_perception }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Spell Save DC</div>
+                                <div class="col-6">{{ character.spell_dc }}</div>
+                            </div>
+                        </div>
+                        {% empty %}
+                        <p>No characters in this party.</p>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    <p>No active party set. Visit the <a href="{% url 'parties' %}">Parties page</a> to set an active party.</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-5">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Turn Order</h4>
+                </div>
+                <div class="card-block">
+                    <div id="output"></div>
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#initiatives-modal">Enter Initiatives</button>
+                </div>
+            </div>
+        </div>
+
     </div>
-</div>
+</section>
 {% endblock %}

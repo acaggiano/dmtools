@@ -1,0 +1,32 @@
+{% extends 'dmdashboard/base.html' %}
+
+{% block content %}
+<style type="text/css">
+  .flash {
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    padding: 10px;
+    box-shadow: 2px 2px 2px #333;
+    z-index: 10000;
+    top: 60px;
+  }
+</style>
+{% include 'dmdashboard/partials/party-modal.html' %}
+{% include 'dmdashboard/partials/edit-party.html' %}
+
+<div class="flash card col-lg-6 ml-auto mr-auto text-white card-success text-center"></div>
+<a href="" class="btn btn-primary" data-toggle="modal" data-target="#create-party">Create Party</a>
+<div class="row">
+    <div id="parties" class="col">
+        <h4>Parties</h4>
+        <ul>
+        	{% for party in parties %}
+        	<li><a data-toggle="modal" data-target="#edit-party" data-slug="{{ party.slug }}" class="party-link">{{ party.name }}</a> {% if party.id == active.id %} - Active {% endif %}</li>
+        	{% empty %}
+        	<li>You ain't got no parties</li>
+        	{% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

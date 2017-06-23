@@ -1,0 +1,31 @@
+<div class="modal fade" id="initiatives-modal" tabindex="-1" role="dialog" aria-labelledby="initiatives-modal-title" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="initiatives-modal-title">Enter Initi</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <fieldset id="initiatives-list" class="container">
+                        <div class="form-group row">
+                            <h2 class="col-sm-7 sm-offset-1 hidden-xs-down">Names</h2>
+                            <h2 class="col-sm-4 hidden-xs-down">Initiatives</h2>
+                        </div>
+                        {% for character in active_characters %}
+                        <div class="form-group row">
+                            <i class="material-icons col-sm-1">edit</i>
+                            <label class="col-sm">{{ character.name }}</label>
+                            <input type="number" name="init1" class="initiative col-md-5 form-control form-control-sm">
+                        </div>
+                        {% endfor %}
+                    </fieldset>
+                    <button type="button" name="initiate" class="btn" onclick="addPlayer()">Add Enemy</button>
+                    <button type="button" name="initiate" class="btn" onclick="initiativeSort()">Initiate!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

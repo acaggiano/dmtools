@@ -1,0 +1,40 @@
+{% extends 'dmdashboard/base.html' %}
+
+{% block content %}
+<style type="text/css">
+  .flash {
+    position: absolute;
+    right: 25%;
+    left: 25%;
+    padding: 10px;
+    box-shadow: 2px 2px 2px #333;
+    z-index: 10000;
+    top: 60px;
+  }
+</style>
+{% include 'dmdashboard/partials/party-modal.html' %}
+{% include 'dmdashboard/partials/edit-party.html' %}
+
+{% include 'dmdashboard/partials/character-modal.html' %}
+{% include 'dmdashboard/partials/edit-character.html' %}
+
+<div class="flash card col-lg-6 ml-auto mr-auto text-white card-success text-center"></div>
+<a href="" class="btn btn-primary" data-toggle="modal" data-target="#create-character">Create Character</a>
+<div id="characters" class="col">
+        <h4>Character</h4>
+            <div class="card-deck">
+            {% for character in characters %}
+            <div class="card">
+                <div class="card-header">
+                    {{ character.name }}
+                </div>
+                <div class="card-block">
+                    <a data-toggle="modal" data-target="#edit-character" data-slug="{{ character.slug }}" class="character-link">Edit</a>
+                </div>
+            </div>
+            {% empty %}
+            <p>You ain't got no characters</p>
+            {% endfor %}
+            </div>
+</div>
+{% endblock %}

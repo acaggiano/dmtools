@@ -27,23 +27,39 @@ def index(request):
 def dashboard(request):
 	user = request.user
 
-	parties = Party.objects.filter(dm=user)
 	try:
-		active_party = Party.objects.get(active=True)
+		active_party = Party.objects.get(dm=user, active=True)
+		active_characters = Character.objects.filter(dm=user, party=active_party)
 	except Party.DoesNotExist:
 		active_party = False
+		active_characters = False
 
-
-	characters = Character.objects.filter(dm=user)
+	all_characters = Character.objects.filter(dm=user)
 
 	context = { 
 		'user': user,
 		'active': active_party,
-		'parties': parties, 
-		'characters': characters,
+		'active_characters': active_characters,
+		'characters': all_characters
 	}
 	return render(request, 'dmdashboard/dashboard.html', context)
 
+@login_required
+def parties(request):
+	user = request.user
+
+	active = Party.objects.filter(dm=user).get(active=True)
+	parties = Party.objects.filter(dm=user).order_by('-active')
+	characters = Character.objects.filter(dm=user)
+
+	context = {
+		'active': active,
+		'parties': parties,
+		'characters': characters
+	}
+
+	return render(request, 'dmdashboard/parties.html', context)
+	
 @login_required
 def create_party(request):
 	user = request.user
@@ -112,6 +128,16 @@ def edit_party(request, party_slug):
 			response = JsonResponse(data)
 			response.status_code = 400
 			return response
+
+@login_required
+def characters(request):
+	user = request.user
+
+	characters = Character.objects.filter(dm=user)
+
+	context = { 'characters': characters}
+
+	return render(request, 'dmdashboard/characters.html', context)
 
 @login_required
 def create_character(request):

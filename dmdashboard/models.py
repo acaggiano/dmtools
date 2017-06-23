@@ -21,7 +21,7 @@ class Party(models.Model):
 		super(Party, self).save()
 
 		if(self.active == True):
-			others = Party.objects.exclude(pk=self.pk)
+			others = Party.objects.filter(dm=self.dm).exclude(pk=self.pk)
 
 			for party in others:
 
