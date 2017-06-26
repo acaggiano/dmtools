@@ -145,7 +145,7 @@ def edit_party(request, party_slug):
 def characters(request):
 	user = request.user
 
-	characters = Character.objects.filter(dm=user)
+	characters = Character.objects.filter(dm=user).order_by('party')
 
 	context = { 'characters': characters}
 

@@ -76,11 +76,13 @@
         <div class="col-5">
             <div class="card">
                 <div class="card-header">
-                    <h4>Turn Order</h4>
+                    <div class="row">
+                    <h4 class="col">Turn Order</h4>
+                    <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#initiatives-modal">Enter Initiatives</button>
+                    </div>
                 </div>
                 <div class="card-block">
-                    <div id="output"></div>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#initiatives-modal">Enter Initiatives</button>
+                    <ol id="output"></ol>
                 </div>
             </div>
         </div>

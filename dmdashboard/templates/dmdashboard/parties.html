@@ -1,32 +1,40 @@
-{% extends 'dmdashboard/base.html' %}
+{% extends 'dmdashboard/base.html' %} {% block content %}
 
-{% block content %}
-<style type="text/css">
-  .flash {
-    position: absolute;
-    right: 25%;
-    left: 25%;
-    padding: 10px;
-    box-shadow: 2px 2px 2px #333;
-    z-index: 10000;
-    top: 60px;
-  }
-</style>
-{% include 'dmdashboard/partials/party-modal.html' %}
-{% include 'dmdashboard/partials/edit-party.html' %}
-
+{% include 'dmdashboard/partials/party-modal.html' %} {% include 'dmdashboard/partials/edit-party.html' %}
 <div class="flash card col-lg-6 ml-auto mr-auto text-white card-success text-center"></div>
-<a href="" class="btn btn-primary" data-toggle="modal" data-target="#create-party">Create Party</a>
-<div class="row">
-    <div id="parties" class="col">
-        <h4>Parties</h4>
-        <ul>
-        	{% for party in parties %}
-        	<li><a data-toggle="modal" data-target="#edit-party" data-slug="{{ party.slug }}" class="party-link">{{ party.name }}</a> {% if party.id == active.id %} - Active {% endif %}</li>
-        	{% empty %}
-        	<li>You ain't got no parties</li>
-        	{% endfor %}
-        </ul>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <li class="navbar-brand" href="">Parties</li>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a href="" class="nav-link" data-toggle="modal" data-target="#create-party"><i class="material-icons">add</i></a>
+        </li>
+    </ul>
+</nav>
+<div id="parties" class="container-fluid">
+    <div class="row">
+        {% for party in parties %}
+        <div class="col-lg-4 col-xl-3 col-md-6 my-1">
+            <div class="card">
+                <div class="card-header">
+                    &nbsp;{{ party.name }} {% if party.id == active.id %} <i class="material-icons md-18 float-left">star</i>{% endif %}<a data-toggle="modal" data-target="#edit-party" data-slug="{{ party.slug }}" class="party-link"><i class="material-icons float-right">edit</i></a>
+                </div>
+                <div class="card-block">
+                    <ul class="list-unstyled">
+                    {% for character in characters %}
+                        {% if character.party == party %}
+                        <li>{{ character.name }}</li>
+                        {% endif%}
+                    {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <p>You ain't got no parties</p>
+        {% endfor %}
     </div>
 </div>
 {% endblock %}

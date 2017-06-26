@@ -1,16 +1,18 @@
 function addPlayer() {
 	var player_list = document.getElementById("initiatives-list");
 
+	var enemy_name = prompt("Enter Enemy Name");
+
 	var row = document.createElement("div");
-	row.className = "form-group row";
+	row.className = "form-group row enemy";
 
 	var button = document.createElement("i");
-	button.innerHTML = "edit";
+	button.innerHTML = "mood_bad";
 	button.className = "material-icons col-sm-1";
 
 	var label = document.createElement("label");
 	label.className = "name col-sm";
-	label.innerHTML = "Enemy";
+	label.innerHTML = enemy_name;
 	label.setAttribute("onblur","setAttribute('contenteditable', 'false')");
 
 	var text = document.createTextNode(" ");
@@ -42,3 +44,10 @@ function initiativeSort() {
 	});
 	$("#initiatives-modal").modal("hide");
 }
+
+$("#initiatives-form :reset").on("click", function(e) {
+	var enemies = document.getElementById("initiatives-form").querySelectorAll(".enemy");
+	for(enemy of enemies){
+		enemy.remove();
+	}
+})

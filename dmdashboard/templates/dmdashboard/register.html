@@ -1,10 +1,16 @@
 {% extends 'dmdashboard/base.html' %}
 
 {% block content %}
-<div class="container">
+<div class="container-fluid">
+
+<div class="flash card text-white text-center"></div>
 	<div class="row">
-		<div class="col-lg-6 ml-auto mr-auto">
-			<div class="flash card text-white text-center"></div>
+		<div class="col-lg-6 mt-5 ml-auto mr-auto">
+			<div class="card">
+				<div class="card-header">
+					Register
+				</div>
+			<div class="card-block">
 			<form id="register-form">
 				{% csrf_token %}
 			  <div class="form-group">
@@ -21,7 +27,9 @@
 			  </div>
 			  <button type="submit" class="btn btn-primary">Register</button>
 			</form>
+			<hr>
 			{{ requirements|safe }}
+			</div>
 		</div>
 	</div>
 </div>

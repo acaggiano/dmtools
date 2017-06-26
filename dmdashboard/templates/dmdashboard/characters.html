@@ -2,16 +2,23 @@
 
 {% block content %}
 
-{% include 'dmdashboard/partials/party-modal.html' %}
-{% include 'dmdashboard/partials/edit-party.html' %}
-
 {% include 'dmdashboard/partials/character-modal.html' %}
 {% include 'dmdashboard/partials/edit-character.html' %}
 
 <div class="flash card col-lg-6 ml-auto mr-auto text-white card-success text-center"></div>
-<button href="" class="material-button" data-toggle="modal" data-target="#create-character"><i class="material-icons">add</i></button>
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <li class="navbar-brand" href="">Characters</li>
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a href="" class="nav-link" data-toggle="modal" data-target="#create-character"><i class="material-icons">add</i></a>
+        </li>
+    </ul>
+</nav>
 <div id="characters" class="container-fluid">
-    <h4>Characters</h4>
+    
     <div class="row">
     {% for character in characters %}
         <div class="col-lg-4 col-xl-3 col-md-6 my-1">
@@ -21,34 +28,41 @@
                     <a data-toggle="modal" data-target="#edit-character" data-slug="{{ character.slug }}" class="character-link"><i class="float-right material-icons">edit</i></a>
                 </div>
                 <div class="card-block">
-                            <div class="row">
-                                <div class="col-6">Race</div>
-                                <div class="col-6">{{ character.race }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Class</div>
-                                <div class="col-6">{{ character.char_class }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Background</div>
-                                <div class="col-6">{{ character.background }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Alignment</div>
-                                <div class="col-6">{{ character.alignment }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Armor Class</div>
-                                <div class="col-6">{{ character.armor_class }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Passive Perception</div>
-                                <div class="col-6">{{ character.passive_perception }}</div>
-                            </div>
-                            <div class="row">
-                                <div class="col-6">Spell Save DC</div>
-                                <div class="col-6">{{ character.spell_dc }}</div>
-                            </div>
+                    <div class="row">
+                        <div class="col-6">Race</div>
+                        <div class="col-6">{{ character.race }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Class</div>
+                        <div class="col-6">{{ character.char_class }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Background</div>
+                        <div class="col-6">{{ character.background }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Alignment</div>
+                        <div class="col-6">{{ character.alignment }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Armor Class</div>
+                        <div class="col-6">{{ character.armor_class }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Passive Perception</div>
+                        <div class="col-6">{{ character.passive_perception }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">Spell Save DC</div>
+                        <div class="col-6">{{ character.spell_dc }}</div>
+                    </div>
+
+                </div>
+                <div class="card-footer">
+                    <div class="row">
+                        <div class="col-6">Party</div>
+                        <div class="col-6">{{ character.party }}</div>
+                    </div>
                 </div>
             </div>
         </div>

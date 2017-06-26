@@ -8,22 +8,23 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form>
+                <form id="initiatives-form">
                     <fieldset id="initiatives-list" class="container">
                         <div class="form-group row">
-                            <h2 class="col-sm-7 sm-offset-1 hidden-xs-down">Names</h2>
-                            <h2 class="col-sm-4 hidden-xs-down">Initiatives</h2>
+                            <h5 class="col-sm-7 sm-offset-1 hidden-xs-down">Combatants</h2>
+                            <h5 class="col-sm-4 hidden-xs-down">Initiatives</h2>
                         </div>
                         {% for character in active_characters %}
                         <div class="form-group row">
-                            <i class="material-icons col-sm-1">edit</i>
+                            <i class="material-icons col-sm-1">face</i>
                             <label class="col-sm">{{ character.name }}</label>
                             <input type="number" name="init1" class="initiative col-md-5 form-control form-control-sm">
                         </div>
                         {% endfor %}
                     </fieldset>
-                    <button type="button" name="initiate" class="btn" onclick="addPlayer()">Add Enemy</button>
-                    <button type="button" name="initiate" class="btn" onclick="initiativeSort()">Initiate!</button>
+                    <button type="button" name="add-enemy" class="btn btn-primary" onclick="addPlayer()">Add Enemy</button>
+                    <button type="reset" class="btn btn-danger">Reset</button>
+                    <button type="button" name="initiate" class="btn btn-success float-right" onclick="initiativeSort()">Initiate!</button>
                 </form>
             </div>
         </div>
