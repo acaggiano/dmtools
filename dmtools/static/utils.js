@@ -110,12 +110,28 @@ $("#edit-party-form").submit(function(e) {
     edit_party(slug);
 });
 
+$("#edit-party-form button.delete").click(function(e) {
+    console.log('deleting this bad boy.');
+
+    var slug = ($(".party-link.editing").data('slug'));
+
+    delete_party(slug);
+});
+
 $("#edit-character-form").submit(function(e) {
     e.preventDefault();
     var slug = ($(".character-link.editing").data('slug'));
     console.log(`editing character ${slug}`);
 
     edit_character(slug);
+});
+
+$("#edit-character-form button.delete").click(function(e) {
+    console.log('deleting this bad boy.');
+
+    var slug = ($(".character-link.editing").data('slug'));
+
+    delete_character(slug);
 });
 
 $('.modal').on('hide.bs.modal', function(e) {
@@ -261,6 +277,39 @@ function edit_party(name) {
     })
 }
 
+function delete_party(name) {
+    setupAjax();
+
+    var confirm = window.confirm("Are you sure you want to delete this party?");
+
+    if(!confirm) {
+        console.log("delete canceled.");
+        return
+    }
+    else {
+        console.log('delete confirmed');
+    }
+
+    $.ajax({
+        url: `/party/${name}/`,
+        type: "DELETE",
+        success: function(response) {
+            $(".flash").html(response);
+            $(".flash").removeClass('card-danger');
+            $(".flash").addClass('card-success');
+            $("#edit-party").modal('hide');
+            $(".flash").show().delay(3000).fadeOut();
+            $('#parties').load(' #parties', function(){$(this).children().unwrap()})
+        },
+        error: function(xhr, errmsg, err) {
+            $(".flash").html(xhr.responseJSON.message);
+            $(".flash").addClass('card-danger');
+            $(".flash").show().delay(5000).fadeOut();
+            $("#edit-character-form")[0].reset();
+        }
+    })
+}
+
 // CHARACTER AJAX CODE
 function create_character() {
 
@@ -352,7 +401,38 @@ function edit_character(name) {
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseJSON.message);
-            $("#edit-party-name").val(xhr.responseJSON.original);
+            $(".flash").addClass('card-danger');
+            $(".flash").show().delay(5000).fadeOut();
+            $("#edit-character-form")[0].reset();
+        }
+    })
+}
+
+function delete_character(name) {
+    setupAjax();
+
+    var confirm = window.confirm("Are you sure you want to delete this character?");
+
+    if(!confirm) {
+        console.log("delete canceled.");
+        return
+    }
+    else {
+        console.log('delete confirmed');
+    }
+
+    $.ajax({
+        url: `/character/${name}/`,
+        type: "DELETE",
+        success: function(response) {
+            $(".flash").html(response);
+            $(".flash").addClass('card-success');
+            $("#edit-character").modal('hide');
+            $(".flash").show().delay(3000).fadeOut();
+            $('#characters').load(' #characters', function(){$(this).children().unwrap()})
+        },
+        error: function(xhr, errmsg, err) {
+            $(".flash").html(xhr.responseJSON.message);
             $(".flash").addClass('card-danger');
             $(".flash").show().delay(5000).fadeOut();
             $("#edit-character-form")[0].reset();

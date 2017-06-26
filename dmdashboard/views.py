@@ -91,18 +91,7 @@ def edit_party(request, party_slug):
 	selected_party = Party.objects.get(dm=user, slug=party_slug)
 	original_name = selected_party.name
 
-	if request.method != 'POST':
-		response = {}
-
-		response['party_name'] = selected_party.name
-		response['isActive'] = selected_party.active
-
-		characters = list(Character.objects.filter(dm=user, party=selected_party).values_list('name', flat=True))
-
-		response['characters'] = characters
-
-		return JsonResponse(response)
-	else:
+	if request.method == 'POST':
 		new_name = request.POST['party_name']
 		if request.POST.get('active') == 'true':
 			new_active = True
@@ -128,6 +117,29 @@ def edit_party(request, party_slug):
 			response = JsonResponse(data)
 			response.status_code = 400
 			return response
+
+	elif request.method == 'DELETE':
+		selected_party = Party.objects.get(dm=user, slug=party_slug)
+
+		try:
+			selected_party.delete()
+		except Exception:
+			response = HttpResponse('Delete Failed')
+			response.status_code = 400
+			return response
+
+		return HttpResponse('Party Deleted')
+	else:
+		response = {}
+
+		response['party_name'] = selected_party.name
+		response['isActive'] = selected_party.active
+
+		characters = list(Character.objects.filter(dm=user, party=selected_party).values_list('name', flat=True))
+
+		response['characters'] = characters
+
+		return JsonResponse(response)
 
 @login_required
 def characters(request):
@@ -197,11 +209,7 @@ def create_character(request):
 @login_required
 def edit_character(request, character_slug):
 	user = request.user
-	if request.method != 'POST':
-		character_info = serializers.serialize('json', Character.objects.filter(dm=user, slug=character_slug))
-
-		return JsonResponse(character_info, safe=False)
-	else:
+	if request.method == 'POST':
 		selected_character = Character.objects.get(dm=user, slug=character_slug)
 		original_name = selected_character.name
 
@@ -262,6 +270,23 @@ def edit_character(request, character_slug):
 			response = JsonResponse(data)
 			response.status_code = 400
 			return response
+
+	elif request.method == 'DELETE':
+		selected_character = Character.objects.get(dm=user, slug=character_slug)
+
+		try:
+			selected_character.delete()
+		except Exception:
+			response = HttpResponse("Delete Failed")
+			response.status_code = 400
+			return response
+
+		return HttpResponse('Character Deleted')
+
+	else:
+		character_info = serializers.serialize('json', Character.objects.filter(dm=user, slug=character_slug))
+
+		return JsonResponse(character_info, safe=False)
 
 
 

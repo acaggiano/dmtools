@@ -1,17 +1,7 @@
 {% extends 'dmdashboard/base.html' %}
 
 {% block content %}
-<style type="text/css">
-  .flash {
-    position: absolute;
-    right: 25%;
-    left: 25%;
-    padding: 10px;
-    box-shadow: 2px 2px 2px #333;
-    z-index: 10000;
-    top: 60px;
-  }
-</style>
+
 {% include 'dmdashboard/partials/party-modal.html' %}
 {% include 'dmdashboard/partials/edit-party.html' %}
 
@@ -19,22 +9,52 @@
 {% include 'dmdashboard/partials/edit-character.html' %}
 
 <div class="flash card col-lg-6 ml-auto mr-auto text-white card-success text-center"></div>
-<a href="" class="btn btn-primary" data-toggle="modal" data-target="#create-character">Create Character</a>
-<div id="characters" class="col">
-        <h4>Character</h4>
-            <div class="card-deck">
-            {% for character in characters %}
+<button href="" class="material-button" data-toggle="modal" data-target="#create-character"><i class="material-icons">add</i></button>
+<div id="characters" class="container-fluid">
+    <h4>Characters</h4>
+    <div class="row">
+    {% for character in characters %}
+        <div class="col-lg-4 col-xl-3 col-md-6 my-1">
             <div class="card">
                 <div class="card-header">
                     {{ character.name }}
+                    <a data-toggle="modal" data-target="#edit-character" data-slug="{{ character.slug }}" class="character-link"><i class="float-right material-icons">edit</i></a>
                 </div>
                 <div class="card-block">
-                    <a data-toggle="modal" data-target="#edit-character" data-slug="{{ character.slug }}" class="character-link">Edit</a>
+                            <div class="row">
+                                <div class="col-6">Race</div>
+                                <div class="col-6">{{ character.race }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Class</div>
+                                <div class="col-6">{{ character.char_class }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Background</div>
+                                <div class="col-6">{{ character.background }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Alignment</div>
+                                <div class="col-6">{{ character.alignment }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Armor Class</div>
+                                <div class="col-6">{{ character.armor_class }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Passive Perception</div>
+                                <div class="col-6">{{ character.passive_perception }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">Spell Save DC</div>
+                                <div class="col-6">{{ character.spell_dc }}</div>
+                            </div>
                 </div>
             </div>
-            {% empty %}
-            <p>You ain't got no characters</p>
-            {% endfor %}
-            </div>
+        </div>
+    {% empty %}
+    <p>You ain't got no characters</p>
+    {% endfor %}
+    </div>
 </div>
 {% endblock %}

@@ -14,8 +14,42 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <!-- My CSS -->
     <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <style type="text/css">
+    .flash {
+        position: absolute;
+        right: 25%;
+        left: 25%;
+        padding: 10px;
+        box-shadow: 2px 2px 2px #333;
+        z-index: 10000;
+        top: 60px;
+    }
+    li:empty {
+        display: none;
+    }
+
+    .card:not(.flash){
+        height: 100%;
+    }
+    .material-button {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        padding: 0;
+        border: none;
+        background-color: #CC1111;
+        color: #fff;
+        width: 56px;
+        height: 56px;
+        font-size: 30px;
+        border-radius: 100%;
+    }
+</style>
   </head>
   <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
@@ -40,17 +74,17 @@
     </nav>
 
     <main>
-    	{% block content %} {% endblock %}
+      {% block content %} {% endblock %}
     </main>
 
-	<!-- Vendor Scripts -->
+  <!-- Vendor Scripts -->
     <!-- <script src="https://unpkg.com/vue" type="text/javascript"></script> -->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-	 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
 
-	<!-- My Scripts -->
-	<script type="text/javascript" src="{% static 'utils.js' %}"></script>
+  <!-- My Scripts -->
+  <script type="text/javascript" src="{% static 'utils.js' %}"></script>
   <script type="text/javascript" src="{% static 'initiatives.js' %}"></script>
   
   </body>
