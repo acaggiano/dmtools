@@ -31,7 +31,7 @@
         display: none;
     }
     
-    #main .card {
+    .card:not(.flash) {
         height: 100%;
     }
     /* Rules for sizing the icon. */
@@ -68,6 +68,12 @@
     
     .material-icons.md-light.md-inactive {
         color: rgba(255, 255, 255, 0.3);
+    }
+    .no-display {
+        display: none;
+    }
+    .initial-display {
+        display: initial;
     }
     </style>
 </head>

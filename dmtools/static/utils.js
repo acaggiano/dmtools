@@ -2,11 +2,9 @@ $(function () {
     $('#party-tab a:first').tab('show')
 })
 
-$('#party-tab a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
-})
-
+if ($('.flash').is(":empty")) {
+    $(".flash").hide();
+}
 
 var csrftoken = getCookie('csrftoken');
 
@@ -44,9 +42,7 @@ function csrfSafeMethod(method) {
 
 
 
-if ($('.flash').is(":empty")) {
-    $(".flash").hide();
-}
+
 
 // LISTENERS
 $('#login-form').submit(function(e) {
@@ -137,6 +133,20 @@ $("#edit-character-form button.delete").click(function(e) {
 $('.modal').on('hide.bs.modal', function(e) {
     this.querySelector('form').reset();
 });
+
+
+function goToPage(sender, pageClass) {
+    var target = sender.getAttribute("data-target");
+    var pages = Array.prototype.slice.call(document.getElementsByClassName(pageClass));
+    for (index in pages) {
+        if (target == pages[index].getAttribute("data-id")) {
+            pages[index].className = "card-block " + pageClass + " initial-display";
+        }
+        else {
+            pages[index].className = "card-block " + pageClass + " no-display"
+        }
+    }
+}
 
 
 // LOGIN AJAX CODE

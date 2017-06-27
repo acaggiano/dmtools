@@ -1,0 +1,97 @@
+<article class="card-deck reference mt-4">
+    <div id="actions" class="card">
+        <div data-id="action-list" class="card-block action_page inherit_display">
+            <h4>Actions in Combat</h4>
+            <ul>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="attack">Attack</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="spell">Cast a Spell</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dash">Dash</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="disengage">Disengage</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dodge">Dodge</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="help">Help</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="hide">Hide</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="ready">Ready</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="search">Search</a></li>
+                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="use">Use an Object</a></li>
+            </ul>
+        </div>
+        <div data-id="attack" class="card-block action_page no-display">
+            <h5>Attack</h5>
+            <p>The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists.</p>
+            <p>With this action, you make one melee or ranged attack. See the “Making an Attack” section for the rules that govern attacks.
+                <p>Certain features, such as the Extra Attack feature of the fighter, allow you to make more than one attack with this action.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
+        </div>
+        <div data-id="spell" class="card-block action_page no-display">
+            <h5>Cast a Spell</h5>
+            <p>Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Casting a spell is, therefore, not necessarily an action. Most spells do have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell. See chapter 10 for the rules on spellcasting.</p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+        <div data-id="dash" class="card-block action_page no-display">
+            <h5>Dash</h5>
+            <p>When you take the Dash action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash.</p>
+            <p>Any increase or decrease to your speed changes this additional movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.</p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+        <div data-id="disengage" class="card-block action_page no-display">
+            <h5>Disengage</h5>
+            <p>If you take the Disengage action, your movement doesn't provoke opportunity attacks for the rest of the turn.</p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+        <div data-id="dodge" class="card-block action_page no-display">
+            <h5>Dodge</h5>
+            <p>When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated (as explained in appendix A) or if your speed drops to 0.</p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+        <div data-id="help" class="card-block action_page no-display">
+            <h5>Help</h5>
+            <p>You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.</p>
+            <p>Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally's attack more effective. If your ally attacks the target before your next turn, the first attack roll is made with advantage.</p>
+            </p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+        <div data-id="hide" class="card-block action_page no-display">
+            <h5>Hide</h5>
+            <p>When you take the Hide action, you make a Dexterity (Stealth) check in an attempt to hide, following the rules in chapter 7 for hiding. If you succeed, you gain certain benefits, as described in the “Unseen Attackers and Targets” section later in this chapter.</p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+        <div data-id="ready" class="card-block action_page no-display">
+            <h5>Ready</h5>
+            <p>Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.</p>
+            <p>First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include “If the cultist steps on the trapdoor, I'll pull the lever that opens it,” and “If the goblin steps next to me, I move away.”</p>
+            <p>When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round.</p>
+            <p>When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration (explained in chapter 10). If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken.</p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+        <div data-id="search" class="card-block action_page no-display">
+            <h5>Search</h5>
+            <p>When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the DM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.</p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+        <div data-id="use" class="card-block action_page no-display">
+            <h5>Use an Object</h5>
+            <p>You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn.</p>
+            <div class="mx-auto">
+                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+        </div>
+    </div>
+</article>
