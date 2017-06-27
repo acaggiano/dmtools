@@ -17,7 +17,7 @@
     <div class="row">
         {% for party in parties %}
         <div class="col-lg-4 col-xl-3 col-md-6 my-1">
-            <div class="card">
+            <div class="card h-100">
                 <div class="card-header">
                     &nbsp;{{ party.name }} {% if party.id == active.id %} <i class="material-icons md-18 float-left">star</i>{% endif %}<a data-toggle="modal" data-target="#edit-party" data-slug="{{ party.slug }}" class="party-link"><i class="material-icons float-right">edit</i></a>
                 </div>

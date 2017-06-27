@@ -1,264 +1,485 @@
 <article class="row mt-4">
-	<div class="card-deck col">
-	<div id="levels" class="card">
-		<div class="card-block">
-			<h4>Level Chart</h4>
-			<div class="tab-content">
-				<table id="low-levels" class="table table-sm text-center tab-pane active" role="tabpanel">
-					<thead>
-						<tr><th>Level</th><th>XP</th><th>Proficiency Bonus</th></tr>
-					</thead>
-					<tbody>
-						<tr><td>1</td><td>0</td><td>+2</td></tr>
-						<tr><td>2</td><td>300</td><td>+2</td></tr>
-						<tr><td>3</td><td>900</td><td>+2</td></tr>
-						<tr><td>4</td><td>2,700</td><td>+2</td></tr>
-						<tr><td>5</td><td>6,500</td><td>+3</td></tr>
-						<tr><td>6</td><td>14,000</td><td>+3</td></tr>
-						<tr><td>7</td><td>23,000</td><td>+3</td></tr>
-						<tr><td>8</td><td>34,000</td><td>+3</td></tr>
-						<tr><td>9</td><td>48,000</td><td>+4</td></tr>
-						<tr><td>10</td><td>64,000</td><td>+4</td></tr>
-					</tbody>
-				</table>
-				<table id="high-levels" class="table table-sm text-center tab-pane" role="tabpanel">
-					<thead>
-						<tr><th>Level</th><th>XP</th><th>Proficiency Bonus</th></tr>
-					</thead>
-					<tbody>
-						<tr><td>11</td><td>85,000</td><td>+4</td></tr>
-						<tr><td>12</td><td>100,000</td><td>+4</td></tr>
-						<tr><td>13</td><td>120,000</td><td>+5</td></tr>
-						<tr><td>14</td><td>140,000</td><td>+5</td></tr>
-						<tr><td>15</td><td>165,000</td><td>+5</td></tr>
-						<tr><td>16</td><td>195,000</td><td>+5</td></tr>
-						<tr><td>17</td><td>225,000</td><td>+6</td></tr>
-						<tr><td>18</td><td>265,000</td><td>+6</td></tr>
-						<tr><td>19</td><td>305,000</td><td>+6</td></tr>
-						<tr><td>20</td><td>355,000</td><td>+6</td></tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
-		<div class="card-footer text-center">
-			<ul id="level-tabs" class="nav" role="tablist">
-				<li class="nav-item mx-auto"><a class="nav-link btn btn-secondary" data-toggle="pill" href="#low-levels" role="tab" aria-controls="low-levels">Levels 1-10</a></li>
-				<li class="nav-item mx-auto"><a class="nav-link btn btn-secondary" data-toggle="pill" href="#high-levels" role="tab" aria-controls="high-levels">Levels 11-20</a></li>
-			</ul>
-		</div>
-	</div>
+    <div class="col-lg-4">
+        <div id="levels" class="card h-100">
+            <div class="card-block">
+                <h4>Level Chart</h4>
+                <div class="tab-content">
+                    <table id="low-levels" class="table table-sm text-center tab-pane active" role="tabpanel">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>XP</th>
+                                <th>Proficiency Bonus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>0</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>300</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>900</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td>2,700</td>
+                                <td>+2</td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>6,500</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td>14,000</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>23,000</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>8</td>
+                                <td>34,000</td>
+                                <td>+3</td>
+                            </tr>
+                            <tr>
+                                <td>9</td>
+                                <td>48,000</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>64,000</td>
+                                <td>+4</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table id="high-levels" class="table table-sm text-center tab-pane" role="tabpanel">
+                        <thead>
+                            <tr>
+                                <th>Level</th>
+                                <th>XP</th>
+                                <th>Proficiency Bonus</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>11</td>
+                                <td>85,000</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>12</td>
+                                <td>100,000</td>
+                                <td>+4</td>
+                            </tr>
+                            <tr>
+                                <td>13</td>
+                                <td>120,000</td>
+                                <td>+5</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>140,000</td>
+                                <td>+5</td>
+                            </tr>
+                            <tr>
+                                <td>15</td>
+                                <td>165,000</td>
+                                <td>+5</td>
+                            </tr>
+                            <tr>
+                                <td>16</td>
+                                <td>195,000</td>
+                                <td>+5</td>
+                            </tr>
+                            <tr>
+                                <td>17</td>
+                                <td>225,000</td>
+                                <td>+6</td>
+                            </tr>
+                            <tr>
+                                <td>18</td>
+                                <td>265,000</td>
+                                <td>+6</td>
+                            </tr>
+                            <tr>
+                                <td>19</td>
+                                <td>305,000</td>
+                                <td>+6</td>
+                            </tr>
+                            <tr>
+                                <td>20</td>
+                                <td>355,000</td>
+                                <td>+6</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <ul id="level-tabs" class="nav" role="tablist">
+                    <li class="nav-item mx-auto"><a class="nav-link btn btn-secondary" data-toggle="pill" href="#low-levels" role="tab" aria-controls="low-levels">Levels 1-10</a></li>
+                    <li class="nav-item mx-auto"><a class="nav-link btn btn-secondary" data-toggle="pill" href="#high-levels" role="tab" aria-controls="high-levels">Levels 11-20</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div id="abilities" class="card h-100">
+        	<div class="card-header">
+                <h4>Abilities</h4>
+                <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#skills" role="tab" aria-controls="skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#modifiers" role="tab" aria-controls="modifiers">Modifiers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#grappling" role="tab" aria-controls="grappling">Grappling</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-block">
+            	<div class="tab-content">
+		            <div id="skills" class="tab-pane active" role="tabpanel">
+		            	<div class="row">
+			                <div class="col-md-6">
+			                    <h6 class="list-group-item-heading">Strength</h6>
+			                    <ul class="list-group-item-text">
+			                        <li>Athletics</li>
+			                    </ul>
+			                </div>
+			                <div class="col-md-6">
+			                    <h6 class="list-group-item-heading">Dexterity</h6>
+			                    <ul class="list-group-item-text">
+			                        <li>Acrobatics</li>
+			                        <li>Sleight of Hand</li>
+			                        <li>Stealth</li>
+			                    </ul>
+			                </div>
+			                <div class="col-md-6">
+			                    <h6 class="list-group-item-heading">Intelligence</h6>
+			                    <ul class="list-group-item-text">
+			                        <li>Arcana</li>
+			                        <li>History</li>
+			                        <li>Investigation</li>
+			                        <li>Nature</li>
+			                        <li>Religion</li>
+			                    </ul>
+			                </div>
+			                <div class="col-md-6">
+			                    <h6 class="list-group-item-heading">Wisdom</h6>
+			                    <ul class="list-group-item-text">
+			                        <li>Animal Handling</li>
+			                        <li>Insight</li>
+			                        <li>Medicine</li>
+			                        <li>Perception</li>
+			                        <li>Survival</li>
+			                    </ul>
+			                </div>
+			                <div class="col-md-6">
+			                    <h6 class="list-group-item-heading">Charisma</h6>
+			                    <ul class="list-group-item-text">
+			                        <li>Deception</li>
+			                        <li>Intimidation</li>
+			                        <li>Performance</li>
+			                        <li>Persuasion</li>
+			                    </ul>
+			                </div>
+			            </div>
+		            </div>
+		            <div id="modifiers" class="tab-pane" role="tabpanel">
+		            	<table class="table table-sm">
+		            		<thead>
+		            			<tr><th>Score</th><th>Modifier</th><th>Score</th><th>Modifier</th>
+		            		</thead>
+		            		<tbody>
+		            			<tr>
+		            				<td>1</td>
+		            				<td>-5</td>
+		            				<td>16-17</td>
+		            				<td>+3</td>
+		            			</tr>
+		            			<tr>
+		            				<td>2-3</td>
+		            				<td>-4</td>
+		            				<td>18-19</td>
+		            				<td>+4</td>
+		            			</tr>
+		            			<tr>
+		            				<td>4-5</td>
+		            				<td>-3</td>
+		            				<td>20-21</td>
+		            				<td>+5</td>
+		            			</tr>
+		            			<tr>
+		            				<td>6-7</td>
+		            				<td>-2</td>
+		            				<td>22-23</td>
+		            				<td>+6</td>
+		            			</tr>
+		            			<tr>
+		            				<td>8-9</td>
+		            				<td>-1</td>
+		            				<td>24-25</td>
+		            				<td>+7</td>
+		            			</tr>
+		            			<tr>
+		            				<td>10-11</td>
+		            				<td>0</td>
+		            				<td>26-27</td>
+		            				<td>+8</td>
+		            			</tr>
+		            			<tr>
+		            				<td>12-13</td>
+		            				<td>+1</td>
+		            				<td>28-29</td>
+		            				<td>+9</td>
+		            			</tr>
+		            			<tr>
+		            				<td>14-15</td>
+		            				<td>+2</td>
+		            				<td>30</td>
+		            				<td>+10</td>
+		            			</tr>
+		            		</tbody>
+		            	</table>
+		            </div>
+		            <div id="grappling" class="tab-pane" role="tabpanel">
+		            	<p>When you want to grab a creature or wrestle with it, you can use the Attack action to make a special melee attack, a grapple. If you’re able to make multiple attacks with the Attack action, this attack replaces one of them.</p>
 
-	<div id="skills" class="card card-block">
-		<h4>Abilities &amp; Skills</h4>
-		<div class="row">
-			<div class="col-md-6">
-				<h6 class="list-group-item-heading">Strength</h6>
-				<ul class="list-group-item-text">
-					<li>Athletics</li>
-				</ul>
-			</div>
-			<div class="col-md-6">
-				<h6 class="list-group-item-heading">Dexterity</h6>
-				<ul class="list-group-item-text">
-					<li>Acrobatics</li>
-					<li>Sleight of Hand</li>
-					<li>Stealth</li>
-				</ul>
-			</div>
-			<div class="col-md-6">
-				<h6 class="list-group-item-heading">Intelligence</h6>
-				<ul class="list-group-item-text">
-					<li>Arcana</li>
-					<li>History</li>
-					<li>Investigation</li>
-					<li>Nature</li>
-					<li>Religion</li>
-				</ul>
-			</div>
-			<div class="col-md-6">
-				<h6 class="list-group-item-heading">Wisdom</h6>
-				<ul class="list-group-item-text">
-					<li>Animal Handling</li>
-					<li>Insight</li>
-					<li>Medicine</li>
-					<li>Perception</li>
-					<li>Survival</li>
-				</ul>
-			</div>
-			<div class="col-md-6">
-				<h6 class="list-group-item-heading">Charisma</h6>
-				<ul class="list-group-item-text">
-					<li>Deception</li>
-					<li>Intimidation</li>
-					<li>Performance</li>
-					<li>Persuasion</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div id="conditions" class="card">
-		<div data-id="condition-list" class="card-block condition_page inherit_display">
-			<h4>Conditions</h4>
-			<ul>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="blinded">Blinded</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="charmed">Charmed</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="deafened">Deafened</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="exhaustion">Exhaustion</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="frightened">Frightened</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="grappled">Grappled</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">Incapacitated</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="invisible">Invisible</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="paralyzed">Paralyzed</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="petrified">Petrified</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="poisoned">Poisoned</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="prone">Prone</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="restrained">Restrained</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="stunned">Stunned</a></li>
-				<li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="unconscious">Unconcious</a></li>
-			</ul>
-		</div>
-		<div data-id="blinded" class="card-block condition_page no-display">
-			<h5>Blinded</h5>
-			<ul>
-				<li>A blinded creature can't see and automatically fails any ability check that requires sight.</li>
-				<li>Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="charmed" class="card-block condition_page no-display">
-			<h5>Charmed</h5>
-			<ul>
-				<li>A charmed creature can't Attack the charmer or target the charmer with harmful Abilities or magical effects.</li>
-				<li>The charmer has advantage on any ability check to interact socially with the creature.</li>
-			</ul>
-			<div class="text-xs-center"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="deafened" class="card-block condition_page no-display">
-			<h5>Deafened</h5>
-			<ul>
-				<li>A deafened creature can't hear and automatically fails any ability check that requires hearing.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="exhaustion" class="card-block condition_page no-display">
-			<h5>Exhaustion</h5>
-			<table class="table table-sm">
-				<thead>
-					<tr>
-						<th>Level</th>
-						<th>Effect</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr><td>1</td><td>Disadvantage on Ability Checks </td></tr>
-					<tr><td>2</td><td>Speed halved</td></tr> 
-					<tr><td>3</td><td>Disadvantage on Attack rolls and saving throws</td></tr> 
-					<tr><td>4</td><td>Hit point maximum halved</td></tr> 
-					<tr><td>5</td><td>Speed reduced to 0</td></tr> 
-					<tr><td>6</td><td>Death</td></tr>
-				</tbody>
-			</table>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>	
-		</div>
-		<div data-id="frightened" class="card-block condition_page no-display">
-			<h5>Frightened</h5>
-			<ul>
-				<li>A frightened creature has disadvantage on Ability Checks and Attack rolls while the source of its fear is within line of sight.</li>
-				<li>The creature can't willingly move closer to the source of its fear.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="grappled" class="card-block condition_page no-display">
-			<h5>Grappled</h5>
-			<ul>
-				<li>A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed.</li> 
-				<li>The condition ends if the Grappler is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>. </li>
-				<li>The condition also ends if an effect removes the grappled creature from the reach of the Grappler or Grappling effect, such as when a creature is hurled away by the Thunderwave spell.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="incapacitated" class="card-block condition_page no-display">
-			<h5>Incapacitated</h5>
-			<ul>
-				<li>An incapacitated creature can't take actions or reactions.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="invisible" class="card-block condition_page no-display">
-			<h5>Invisible</h5>
-			<ul>
-				<li>An invisible creature is impossible to see without the aid of magic or a Special sense. For the purpose of Hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves.</li>
-				<li>Attack rolls against the creature have disadvantage, and the creature's Attack rolls have advantage.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="paralyzed" class="card-block condition_page no-display">
-			<h5>Paralyzed</h5>
-			<ul>
-				<li>A paralyzed creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a> and can't move or speak.</li>
-				<li>The creature automatically fails Strength and Dexterity saving throws.</li>
-				<li>Attack rolls against the creature have advantage.</li>
-				<li>Any Attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="petrified" class="card-block condition_page no-display">
-			<h5>Petrified</h5>
-			<ul>
-				<li>A petrified creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging.</li>
-				<li>The creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>, can't move or speak, and is unaware of its surroundings.</li>
-				<li>Attack rolls against the creature have advantage.</li>
-				<li>The creature automatically fails Strength and Dexterity saving throws.</li>
-				<li>The creature has Resistance to all damage.</li>
-				<li>The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="poisoned" class="card-block condition_page no-display">
-			<h5>Poisoned</h5>
-			<ul>
-				<li>A poisoned creature has disadvantage on Attack rolls and Ability Checks.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="prone" class="card-block condition_page no-display">
-			<h5>Prone</h5>
-			<ul>
-				<li>A prone creature's only Movement option is to crawl, unless it stands up and thereby ends the condition.</li>
-				<li>The creature has disadvantage on Attack rolls.</li>
-				<li>An Attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the Attack roll has disadvantage.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="restrained" class="card-block condition_page no-display">
-			<h5>Restrained</h5>
-			<ul>
-				<li>A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed.</li>
-				<li>Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage.</li>
-				<li>The creature has disadvantage on Dexterity saving throws.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="stunned" class="card-block condition_page no-display">
-			<h5>Stunned</h5>
-			<ul>
-				<li>A stunned creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>, can't move, and can speak only falteringly.</li>
-				<li>The creature automatically fails Strength and Dexterity saving throws.</li>
-				<li>Attack rolls against the creature have advantage.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-		<div data-id="unconscious" class="card-block condition_page no-display">
-			<h5>Unconscious</h5>
-			<ul>
-				<li>An unconscious creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>, can't move or speak, and is unaware of its surroundings.</li>
-				<li>The creature drops whatever it's holding and falls prone.</li>
-				<li>The creature automatically fails Strength and Dexterity saving throws.</li>
-				<li>Attack rolls against the creature have advantage.</li>
-				<li>Any Attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</li>
-			</ul>
-			<div class="mx-auto"><button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button></div>
-		</div>
-	</div>
-	</div>
+		            	<p>The target of your grapple must be no more than one size larger than you and must be within your reach. Using at least one free hand, you try to seize the target by making a grapple check instead of an attack roll: a Strength (Athletics) check contested by the target’s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If you succeed, you subject the target to the Grappled condition. The condition specifies the things that end it, and you can release the target whenever you like (no action required).</p>
+		            </div>
+		        </div>
+		    </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div id="conditions" class="card h-100">
+            <div data-id="condition-list" class="card-block condition_page inherit_display">
+                <h4>Conditions</h4>
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="blinded">Blinded</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="charmed">Charmed</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="deafened">Deafened</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="exhaustion">Exhaustion</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="frightened">Frightened</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="grappled">Grappled</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">Incapacitated</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="invisible">Invisible</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="paralyzed">Paralyzed</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="petrified">Petrified</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="poisoned">Poisoned</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="prone">Prone</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="restrained">Restrained</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="stunned">Stunned</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="unconscious">Unconcious</a></li>
+                </ul>
+            </div>
+            <div data-id="blinded" class="card-block condition_page no-display">
+                <h5>Blinded</h5>
+                <ul>
+                    <li>A blinded creature can't see and automatically fails any ability check that requires sight.</li>
+                    <li>Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="charmed" class="card-block condition_page no-display">
+                <h5>Charmed</h5>
+                <ul>
+                    <li>A charmed creature can't Attack the charmer or target the charmer with harmful Abilities or magical effects.</li>
+                    <li>The charmer has advantage on any ability check to interact socially with the creature.</li>
+                </ul>
+                <div class="text-xs-center">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="deafened" class="card-block condition_page no-display">
+                <h5>Deafened</h5>
+                <ul>
+                    <li>A deafened creature can't hear and automatically fails any ability check that requires hearing.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="exhaustion" class="card-block condition_page no-display">
+                <h5>Exhaustion</h5>
+                <table class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Level</th>
+                            <th>Effect</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Disadvantage on Ability Checks </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Speed halved</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Disadvantage on Attack rolls and saving throws</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Hit point maximum halved</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Speed reduced to 0</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>Death</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p>Finishing a long rest reduces a creature's exhaustion level by 1, provided that the creature has also ingested some food and drink.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="frightened" class="card-block condition_page no-display">
+                <h5>Frightened</h5>
+                <ul>
+                    <li>A frightened creature has disadvantage on Ability Checks and Attack rolls while the source of its fear is within line of sight.</li>
+                    <li>The creature can't willingly move closer to the source of its fear.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="grappled" class="card-block condition_page no-display">
+                <h5>Grappled</h5>
+                <ul>
+                    <li>A grappled creature's speed becomes 0, and it can't benefit from any bonus to its speed.</li>
+                    <li>The condition ends if the Grappler is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>. </li>
+                    <li>The condition also ends if an effect removes the grappled creature from the reach of the Grappler or Grappling effect, such as when a creature is hurled away by the Thunderwave spell.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="incapacitated" class="card-block condition_page no-display">
+                <h5>Incapacitated</h5>
+                <ul>
+                    <li>An incapacitated creature can't take actions or reactions.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="invisible" class="card-block condition_page no-display">
+                <h5>Invisible</h5>
+                <ul>
+                    <li>An invisible creature is impossible to see without the aid of magic or a Special sense. For the purpose of Hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves.</li>
+                    <li>Attack rolls against the creature have disadvantage, and the creature's Attack rolls have advantage.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="paralyzed" class="card-block condition_page no-display">
+                <h5>Paralyzed</h5>
+                <ul>
+                    <li>A paralyzed creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a> and can't move or speak.</li>
+                    <li>The creature automatically fails Strength and Dexterity saving throws.</li>
+                    <li>Attack rolls against the creature have advantage.</li>
+                    <li>Any Attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="petrified" class="card-block condition_page no-display">
+                <h5>Petrified</h5>
+                <ul>
+                    <li>A petrified creature is transformed, along with any nonmagical object it is wearing or carrying, into a solid inanimate substance (usually stone). Its weight increases by a factor of ten, and it ceases aging.</li>
+                    <li>The creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>, can't move or speak, and is unaware of its surroundings.</li>
+                    <li>Attack rolls against the creature have advantage.</li>
+                    <li>The creature automatically fails Strength and Dexterity saving throws.</li>
+                    <li>The creature has Resistance to all damage.</li>
+                    <li>The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="poisoned" class="card-block condition_page no-display">
+                <h5>Poisoned</h5>
+                <ul>
+                    <li>A poisoned creature has disadvantage on Attack rolls and Ability Checks.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="prone" class="card-block condition_page no-display">
+                <h5>Prone</h5>
+                <ul>
+                    <li>A prone creature's only Movement option is to crawl, unless it stands up and thereby ends the condition.</li>
+                    <li>The creature has disadvantage on Attack rolls.</li>
+                    <li>An Attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the Attack roll has disadvantage.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="restrained" class="card-block condition_page no-display">
+                <h5>Restrained</h5>
+                <ul>
+                    <li>A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed.</li>
+                    <li>Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage.</li>
+                    <li>The creature has disadvantage on Dexterity saving throws.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="stunned" class="card-block condition_page no-display">
+                <h5>Stunned</h5>
+                <ul>
+                    <li>A stunned creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>, can't move, and can speak only falteringly.</li>
+                    <li>The creature automatically fails Strength and Dexterity saving throws.</li>
+                    <li>Attack rolls against the creature have advantage.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="unconscious" class="card-block condition_page no-display">
+                <h5>Unconscious</h5>
+                <ul>
+                    <li>An unconscious creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>, can't move or speak, and is unaware of its surroundings.</li>
+                    <li>The creature drops whatever it's holding and falls prone.</li>
+                    <li>The creature automatically fails Strength and Dexterity saving throws.</li>
+                    <li>Attack rolls against the creature have advantage.</li>
+                    <li>Any Attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</li>
+                </ul>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </article>

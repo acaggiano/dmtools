@@ -1,96 +1,203 @@
-<article class="card-deck reference mt-4">
-    <div id="actions" class="card">
-        <div data-id="action-list" class="card-block action_page inherit_display">
-            <h4>Actions in Combat</h4>
-            <ul>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="attack">Attack</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="spell">Cast a Spell</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dash">Dash</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="disengage">Disengage</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dodge">Dodge</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="help">Help</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="hide">Hide</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="ready">Ready</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="search">Search</a></li>
-                <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="use">Use an Object</a></li>
-            </ul>
-        </div>
-        <div data-id="attack" class="card-block action_page no-display">
-            <h5>Attack</h5>
-            <p>The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists.</p>
-            <p>With this action, you make one melee or ranged attack. See the “Making an Attack” section for the rules that govern attacks.
-                <p>Certain features, such as the Extra Attack feature of the fighter, allow you to make more than one attack with this action.</p>
+<article class="row mt-4">
+    <div class="col-lg-5">
+        <div id="actions" class="card">
+            <div data-id="action-list" class="card-block action_page inherit_display">
+                <h4>Actions in Combat</h4>
+                <ul>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="attack">Attack</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="spell">Cast a Spell</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dash">Dash</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="disengage">Disengage</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dodge">Dodge</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="help">Help</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="hide">Hide</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="ready">Ready</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="search">Search</a></li>
+                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="use">Use an Object</a></li>
+                </ul>
+            </div>
+            <div data-id="attack" class="card-block action_page no-display">
+                <h5>Attack</h5>
+                <p>The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists.</p>
+                <p>With this action, you make one melee or ranged attack. See the “Making an Attack” section for the rules that govern attacks.</p>
+                    <p>Certain features, such as the Extra Attack feature of the fighter, allow you to make more than one attack with this action.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
+            </div>
+            <div data-id="spell" class="card-block action_page no-display">
+                <h5>Cast a Spell</h5>
+                <p>Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Casting a spell is, therefore, not necessarily an action. Most spells do have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell. See chapter 10 for the rules on spellcasting.</p>
                 <div class="mx-auto">
                     <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                 </div>
-        </div>
-        <div data-id="spell" class="card-block action_page no-display">
-            <h5>Cast a Spell</h5>
-            <p>Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Casting a spell is, therefore, not necessarily an action. Most spells do have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell. See chapter 10 for the rules on spellcasting.</p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            </div>
+            <div data-id="dash" class="card-block action_page no-display">
+                <h5>Dash</h5>
+                <p>When you take the Dash action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash.</p>
+                <p>Any increase or decrease to your speed changes this additional movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="disengage" class="card-block action_page no-display">
+                <h5>Disengage</h5>
+                <p>If you take the Disengage action, your movement doesn't provoke opportunity attacks for the rest of the turn.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="dodge" class="card-block action_page no-display">
+                <h5>Dodge</h5>
+                <p>When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated (as explained in appendix A) or if your speed drops to 0.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="help" class="card-block action_page no-display">
+                <h5>Help</h5>
+                <p>You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.</p>
+                <p>Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally's attack more effective. If your ally attacks the target before your next turn, the first attack roll is made with advantage.</p>
+                </p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="hide" class="card-block action_page no-display">
+                <h5>Hide</h5>
+                <p>When you take the Hide action, you make a Dexterity (Stealth) check in an attempt to hide, following the rules in chapter 7 for hiding. If you succeed, you gain certain benefits, as described in the “Unseen Attackers and Targets” section later in this chapter.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="ready" class="card-block action_page no-display">
+                <h5>Ready</h5>
+                <p>Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.</p>
+                <p>First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include “If the cultist steps on the trapdoor, I'll pull the lever that opens it,” and “If the goblin steps next to me, I move away.”</p>
+                <p>When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round.</p>
+                <p>When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration (explained in chapter 10). If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="search" class="card-block action_page no-display">
+                <h5>Search</h5>
+                <p>When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the DM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
+            </div>
+            <div data-id="use" class="card-block action_page no-display">
+                <h5>Use an Object</h5>
+                <p>You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn.</p>
+                <div class="mx-auto">
+                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                </div>
             </div>
         </div>
-        <div data-id="dash" class="card-block action_page no-display">
-            <h5>Dash</h5>
-            <p>When you take the Dash action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash.</p>
-            <p>Any increase or decrease to your speed changes this additional movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.</p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+
+    </div>
+    <div class="col-lg-7">
+        <div id="equipment" class="card h-100">
+            <div class="card-header">
+                <h4>Equipment</h4>
+                <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#simple-weapons" role="tab" aria-controls="simple-weapons">Simple Weapons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#martial-weapons" role="tab" aria-controls="martial-weapons">Martial Weapons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#armor" role="tab" aria-controls="armor">Armor</a>
+                    </li>
+                </ul>
             </div>
-        </div>
-        <div data-id="disengage" class="card-block action_page no-display">
-            <h5>Disengage</h5>
-            <p>If you take the Disengage action, your movement doesn't provoke opportunity attacks for the rest of the turn.</p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
-            </div>
-        </div>
-        <div data-id="dodge" class="card-block action_page no-display">
-            <h5>Dodge</h5>
-            <p>When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated (as explained in appendix A) or if your speed drops to 0.</p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
-            </div>
-        </div>
-        <div data-id="help" class="card-block action_page no-display">
-            <h5>Help</h5>
-            <p>You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.</p>
-            <p>Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally's attack more effective. If your ally attacks the target before your next turn, the first attack roll is made with advantage.</p>
-            </p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
-            </div>
-        </div>
-        <div data-id="hide" class="card-block action_page no-display">
-            <h5>Hide</h5>
-            <p>When you take the Hide action, you make a Dexterity (Stealth) check in an attempt to hide, following the rules in chapter 7 for hiding. If you succeed, you gain certain benefits, as described in the “Unseen Attackers and Targets” section later in this chapter.</p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
-            </div>
-        </div>
-        <div data-id="ready" class="card-block action_page no-display">
-            <h5>Ready</h5>
-            <p>Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.</p>
-            <p>First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include “If the cultist steps on the trapdoor, I'll pull the lever that opens it,” and “If the goblin steps next to me, I move away.”</p>
-            <p>When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round.</p>
-            <p>When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration (explained in chapter 10). If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken.</p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
-            </div>
-        </div>
-        <div data-id="search" class="card-block action_page no-display">
-            <h5>Search</h5>
-            <p>When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the DM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.</p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
-            </div>
-        </div>
-        <div data-id="use" class="card-block action_page no-display">
-            <h5>Use an Object</h5>
-            <p>You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn.</p>
-            <div class="mx-auto">
-                <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+            <div class="tab-content p-2">
+                <div id="simple-weapons" class="tab-pane active" role="tabpanel">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr><th>Name</th><th>Cost</th><th>Damage</th><th>Weight</th><th>Properties</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-active"><td colspan="5" >Simple Melee Weapons</td></tr>
+                            <tr><td>Club</td><td>1 sp</td><td>1d4 bludgeoning</td><td>2 lb.</td><td>Light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button></td></tr>
+                            <tr><td>Dagger</td><td>2 gp</td><td>1d4 piercing</td><td>1 lb.</td><td>Finesse, light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button>, thrown (range 20/60)</td></tr>
+                            <tr><td>Greatclub</td> <td>2 sp</td> <td>1d8 bludgeoning</td> <td>10 lb.</td> <td>Two-handed</td></tr>
+                            <tr><td>Handaxe</td> <td>5 gp</td> <td>1d6 slashing</td> <td>2 lb.</td> <td>Light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button>, thrown (range 20/60)</td></tr>
+                            <tr><td>Javelin</td> <td>5 sp</td> <td>1d6 piercing</td> <td>2 lb.</td> <td>Thrown (range 30/120)</td></tr>
+                            <tr><td>Light hammer</td> <td>2 gp</td> <td>1d4 bludgeoning</td> <td>2 lb.</td> <td>Light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button>, thrown (range 20/60)</td></tr>
+                            <tr><td>Mace</td> <td>5 gp</td> <td>1d6 bludgeoning</td> <td>4 lb.</td> <td>—</td></tr>
+                            <tr><td>Quarterstaff</td> <td>2 sp</td> <td>1d6 bludgeoning</td> <td>4 lb.</td> <td>Versatile (1d8)</td></tr>
+                            <tr><td>Sickle</td> <td>1 gp</td> <td>1d4 slashing</td> <td>2 lb.</td> <td>Light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button></td></tr>
+                            <tr><td>Spear</td> <td>1 gp</td> <td>1d6 piercing</td> <td>3 lb.</td> <td>Thrown (range 20/60), versatile (1d8)</td></tr>
+                            <tr><td>Unarmed strike</td> <td>—</td> <td>1 bludgeoning</td> <td>—</td> <td>—</td></tr>
+                            <tr class="table-active"><td colspan="5">Simple Ranged Weapons</td></tr>
+                            <tr><td>Crossbow, light</td> <td>25 gp</td> <td>1d8 piercing</td> <td>5 lb.</td> <td>Ammunition (range 80/320), loading, two-handed</td></tr>
+                            <tr><td>Dart</td> <td>5 cp</td> <td>1d4 piercing</td> <td>1/4 lb.</td> <td>Finesse, thrown (range 20/60)</td></tr>
+                            <tr><td>Shortbow</td> <td>25 gp</td> <td>1d6 piercing</td> <td>2 lb.</td> <td>Ammunition (range 80/320), two-handed</td></tr>
+                            <tr><td>Sling</td> <td>1 sp</td><td>1d4 bludgeoning</td> <td>—</td> <td>Ammunition (range 30/120)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="martial-weapons" class="tab-pane" role="tabpanel">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr><th>Name</th><th>Cost</th><th>Damage</th><th>Weight</th><th>Properties</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-active"><td colspan="5">Martial Melee Weapons</td></tr>
+                            <tr><td>Battleaxe</td> <td>10 gp</td> <td>1d8 slashing</td> <td>4 lb.</td> <td>Versatile (1d10)</td></tr>
+                            <tr><td>Flail</td> <td>10 gp</td> <td>1d8 bludgeoning</td> <td>2 lb.</td> <td>—</td></tr>
+                            <tr><td>Glaive</td> <td>20 gp</td> <td>1d10 slashing</td> <td>6 lb.</td> <td>Heavy, reach, two-handed</td></tr>
+                            <tr><td>Greataxe</td> <td>30 gp</td> <td>1d12 slashing</td> <td>7 lb.</td> <td>Heavy, two-handed</td></tr>
+                            <tr><td>Greatsword</td> <td>50 gp</td> <td>2d6 slashing</td> <td>6 lb.</td> <td>Heavy, two-handed</td></tr>
+                            <tr><td>Halberd</td> <td>20 gp</td> <td>1d10 slashing</td> <td>6 lb.</td> <td>Heavy, reach, two-handed</td></tr>
+                            <tr><td>Lance</td> <td>10 gp</td> <td>1d12 piercing</td> <td>6 lb.</td> <td>Reach, special</td></tr>
+                            <tr><td>Longsword</td> <td>15 gp</td> <td>1d8 slashing</td> <td>3 lb.</td> <td>Versatile (1d10)</td></tr>
+                            <tr><td>Maul</td> <td>10 gp</td> <td>2d6 bludgeoning</td> <td>10 lb.</td> <td>Heavy, two-handed</td></tr>
+                            <tr><td>Morningstar</td> <td>15 gp</td> <td>1d8 piercing</td> <td>4 lb.</td> <td>—</td></tr>
+                            <tr><td>Pike</td> <td>5 gp</td> <td>1d10 piercing</td> <td>18 lb.</td> <td>Heavy, reach, two-handed</td></tr>
+                            <tr><td>Rapier</td> <td>25 gp</td> <td>1d8 piercing</td> <td>2 lb.</td> <td>Finesse</td></tr>
+                            <tr><td>Scimitar</td> <td>25 gp</td> <td>1d6 slashing</td> <td>3 lb.</td> <td>Finesse, light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button></td></tr>
+                            <tr><td>Shortsword</td> <td>10 gp</td> <td>1d6 piercing</td> <td>2 lb.</td> <td>Finesse, light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button></td></tr>
+                            <tr><td>Trident</td> <td>5 gp</td> <td>1d6 piercing</td> <td>4 lb.</td> <td>Thrown (range 20/60), versatile (1d8)</td></tr>
+                            <tr><td>War pick</td> <td>5 gp</td> <td>1d8 piercing</td> <td>2 lb.</td> <td>—</td></tr>
+                            <tr><td>Warhammer</td> <td>15 gp</td> <td>1d8 bludgeoning</td> <td>2 lb.</td> <td>Versatile (1d10)</td></tr>
+                            <tr><td>Whip</td> <td>2 gp</td> <td>1d4 slashing</td> <td>3 lb.</td> <td>Finesse, reach</td></tr>
+                            <tr class="table-active"><td colspan="5">Martial Ranged Weapons</td></tr>
+                            <tr><td>Blowgun</td> <td>10 gp</td> <td>1 piercing</td> <td>1 lb.</td> <td>Ammunition (range 25/100), loading</td></tr>
+                            <tr><td>Crossbow, hand</td> <td>75 gp</td> <td>1d6 piercing</td> <td>3 lb.</td> <td>Ammunition (range 30/120), light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button>, loading</td></tr>
+                            <tr><td>Crossbow, heavy</td> <td>50 gp</td> <td>1d10 piercing </td><td>18 lb.</td> <td>Ammunition (range 100/400), heavy, loading, two-handed</td></tr>
+                            <tr><td>Longbow</td> <td>50 gp</td> <td>1d8 piercing</td> <td>2 lb.</td> <td>Ammunition (range 150/600), heavy, two-handed</td></tr>
+                            <tr><td>Net</td> <td>1 gp</td> <td>—</td> <td>3 lb.</td> <td>Special, thrown (range 5/15)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div id="armor" class="tab-pane" role="tabpanel">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr><th>Name</th><th>Cost</th><th>Armor Class (AC)</th><th>Strength</th><th>Stealth</th><th>Weight</th></tr>
+                        </thead>
+                        <tr class="table-active"><td colspan="6">Light Armor</td></tr>
+                        <tr><td>Padded</td> <td>5 gp</td> <td>11 + Dex modifier</td> <td>—</td> <td>Disadvantage</td> <td>8 lb.</td></tr>
+                        <tr><td>Leather</td> <td>10 gp</td> <td>11 + Dex modifier</td> <td>—</td> <td>—</td> <td>10 lb.</td></tr>
+                        <tr><td>Studded leather</td> <td>45 gp</td> <td>12 + Dex modifier</td> <td>—</td> <td>—</td> <td>13 lb.</td></tr>
+                        <tr class="table-active"><td colspan="6">Medium Armor</td></tr>
+                        <tr><td>Hide</td> <td>10 gp</td> <td>12 + Dex modifier (max 2)</td> <td>—</td> <td>—</td> <td>12 lb.</td></tr>
+                        <tr><td>Chain shirt</td> <td>50 gp</td> <td>13 + Dex modifier (max 2)</td> <td>—</td> <td>—</td> <td>20 lb.</td></tr>
+                        <tr><td>Scale mail</td> <td>50 gp</td> <td>14 + Dex modifier (max 2)</td> <td>—</td> <td>Disadvantage</td> <td>45 lb.</td></tr>
+                        <tr><td>Breastplate</td> <td>400 gp</td> <td>14 + Dex modifier (max 2)</td> <td>—</td> <td>—</td> <td>20 lb.</td></tr>
+                        <tr><td>Half plate</td> <td>750 gp</td> <td>15 + Dex modifier (max 2)</td> <td>—</td> <td>Disadvantage</td> <td>40 lb.</td></tr>
+                        <tr class="table-active"><td colspan="6">Heavy Armor</td></tr>
+                        <tr><td>Ring mail</td> <td>30 gp</td> <td>14</td> <td>—</td> <td>Disadvantage</td> <td>40 lb.</td></tr>
+                        <tr><td>Chain mail</td> <td>75 gp</td> <td>16</td> <td>Str 13</td> <td>Disadvantage</td> <td>55 lb.</td></tr>
+                        <tr><td>Splint</td> <td>200 gp</td> <td>17</td> <td>Str 15</td> <td>Disadvantage</td> <td>60 lb.</td></tr>
+                        <tr><td>Plate</td> <td>1,500 gp</td> <td>18</td> <td>Str 15</td> <td>Disadvantage</td> <td>65 lb.</td></tr>
+                        <tr class="table-active"><td colspan="6">Shield</td></tr>
+                        <tr><td>Shield</td> <td>10 gp</td> <td>+2</td> <td>—</td> <td>—</td> <td>6 lb.</td></tr>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
