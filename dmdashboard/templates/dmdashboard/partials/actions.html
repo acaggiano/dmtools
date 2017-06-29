@@ -1,104 +1,255 @@
 <article class="row mt-4">
     <div class="col-lg-5">
         <div id="actions" class="card">
-            <div data-id="action-list" class="card-block action_page inherit_display">
-                <h4>Actions in Combat</h4>
-                <ul>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="attack">Attack</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="spell">Cast a Spell</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dash">Dash</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="disengage">Disengage</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dodge">Dodge</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="help">Help</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="hide">Hide</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="ready">Ready</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="search">Search</a></li>
-                    <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="use">Use an Object</a></li>
-                </ul>
-            </div>
-            <div data-id="attack" class="card-block action_page no-display">
-                <h5>Attack</h5>
-                <p>The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists.</p>
-                <p>With this action, you make one melee or ranged attack. See the “Making an Attack” section for the rules that govern attacks.</p>
+            <div class="card-block">
+                <div data-id="action-list" class="action_page inherit_display">
+                    <h4>Actions in Combat</h4>
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="attack">Attack</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="spell">Cast a Spell</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dash">Dash</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="disengage">Disengage</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="dodge">Dodge</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="help">Help</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="hide">Hide</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="ready">Ready</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="search">Search</a></li>
+                        <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="use">Use an Object</a></li>
+                    </ul>
+                </div>
+                <div data-id="attack" class="action_page no-display">
+                    <h5>Attack</h5>
+                    <p>The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists.</p>
+                    <p>With this action, you make one melee or ranged attack. See the “Making an Attack” section for the rules that govern attacks.</p>
                     <p>Certain features, such as the Extra Attack feature of the fighter, allow you to make more than one attack with this action.</p>
                     <div class="mx-auto">
                         <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
-            </div>
-            <div data-id="spell" class="card-block action_page no-display">
-                <h5>Cast a Spell</h5>
-                <p>Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Casting a spell is, therefore, not necessarily an action. Most spells do have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell. See chapter 10 for the rules on spellcasting.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                 </div>
-            </div>
-            <div data-id="dash" class="card-block action_page no-display">
-                <h5>Dash</h5>
-                <p>When you take the Dash action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash.</p>
-                <p>Any increase or decrease to your speed changes this additional movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                <div data-id="spell" class="action_page no-display">
+                    <h5>Cast a Spell</h5>
+                    <p>Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Casting a spell is, therefore, not necessarily an action. Most spells do have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
                 </div>
-            </div>
-            <div data-id="disengage" class="card-block action_page no-display">
-                <h5>Disengage</h5>
-                <p>If you take the Disengage action, your movement doesn't provoke opportunity attacks for the rest of the turn.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                <div data-id="dash" class="action_page no-display">
+                    <h5>Dash</h5>
+                    <p>When you take the Dash action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash.</p>
+                    <p>Any increase or decrease to your speed changes this additional movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
                 </div>
-            </div>
-            <div data-id="dodge" class="card-block action_page no-display">
-                <h5>Dodge</h5>
-                <p>When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated (as explained in appendix A) or if your speed drops to 0.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                <div data-id="disengage" class="action_page no-display">
+                    <h5>Disengage</h5>
+                    <p>If you take the Disengage action, your movement doesn't provoke opportunity attacks for the rest of the turn.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
                 </div>
-            </div>
-            <div data-id="help" class="card-block action_page no-display">
-                <h5>Help</h5>
-                <p>You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.</p>
-                <p>Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally's attack more effective. If your ally attacks the target before your next turn, the first attack roll is made with advantage.</p>
-                </p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                <div data-id="dodge" class="action_page no-display">
+                    <h5>Dodge</h5>
+                    <p>When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated (as explained in appendix A) or if your speed drops to 0.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
                 </div>
-            </div>
-            <div data-id="hide" class="card-block action_page no-display">
-                <h5>Hide</h5>
-                <p>When you take the Hide action, you make a Dexterity (Stealth) check in an attempt to hide, following the rules in chapter 7 for hiding. If you succeed, you gain certain benefits, as described in the “Unseen Attackers and Targets” section later in this chapter.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                <div data-id="help" class="action_page no-display">
+                    <h5>Help</h5>
+                    <p>You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.</p>
+                    <p>Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally's attack more effective. If your ally attacks the target before your next turn, the first attack roll is made with advantage.</p>
+                    </p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
                 </div>
-            </div>
-            <div data-id="ready" class="card-block action_page no-display">
-                <h5>Ready</h5>
-                <p>Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.</p>
-                <p>First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include “If the cultist steps on the trapdoor, I'll pull the lever that opens it,” and “If the goblin steps next to me, I move away.”</p>
-                <p>When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round.</p>
-                <p>When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration (explained in chapter 10). If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                <div data-id="hide" class="action_page no-display">
+                    <h5>Hide</h5>
+                    <p>When you take the Hide action, you make a Dexterity (Stealth) check in an attempt to hide. If you succeed, you gain certain benefits.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
                 </div>
-            </div>
-            <div data-id="search" class="card-block action_page no-display">
-                <h5>Search</h5>
-                <p>When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the DM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                <div data-id="ready" class="action_page no-display">
+                    <h5>Ready</h5>
+                    <p>Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.</p>
+                    <p>First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include “If the cultist steps on the trapdoor, I'll pull the lever that opens it,” and “If the goblin steps next to me, I move away.”</p>
+                    <p>When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round.</p>
+                    <p>When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration. If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
                 </div>
-            </div>
-            <div data-id="use" class="card-block action_page no-display">
-                <h5>Use an Object</h5>
-                <p>You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                <div data-id="search" class="action_page no-display">
+                    <h5>Search</h5>
+                    <p>When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the DM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
+                </div>
+                <div data-id="use" class="action_page no-display">
+                    <h5>Use an Object</h5>
+                    <p>You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn.</p>
+                    <div class="mx-auto">
+                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    </div>
                 </div>
             </div>
         </div>
-
+        <div class="card mt-4">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a href="#movement" class="nav-link active" data-toggle="tab" role="tab" aria-controls="movement">Movement</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#travel" class="nav-link" data-toggle="tab" role="tab" aria-controls="travel">Travel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#tracking" class="nav-link" data-toggle="tab" role="tab" aria-controls="tracking">Tracking</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tab-content">
+                <div id="movement" class="tab-pane active" role="tabpanel">
+                    <div class="card-block">
+                        <div data-id="movement-list" class="movement-page">
+                            <ul>
+                                <li><a href="javascript:void(0);" onclick="goToPage(this, 'movement-page')" data-target="speed">Speed</a></li>
+                                <li><a href="javascript:void(0);" onclick="goToPage(this, 'movement-page')" data-target="climb">Climbing, Swimming, Crawling</a></li>
+                                <li><a href="javascript:void(0);" onclick="goToPage(this, 'movement-page')" data-target="long-jump">Long Jump</a></li>
+                                <li><a href="javascript:void(0);" onclick="goToPage(this, 'movement-page')" data-target="high-jump">High Jump</a></li>
+                            </ul>
+                            <p><strong>Difficult Terrain</strong> is half speed.</p>
+                        </div>
+                        <div data-id="speed" class="movement-page no-display">
+                            <p><strong>Speed. </strong> Every character and monster has a speed, which is the distance in feet that the character or monster can walk in 1 round.</p>
+                            <div>
+                                <button class="btn btn-primary mx-auto" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
+                            </div>
+                        </div>
+                        <div data-id="climb" class="movement-page no-display">
+                            <p><strong>Climbing, Swimming, Crawling</strong> While climbing or swimming, each foot of movement costs 1 extra foot (2 extra feet in difficult terrain), unless a creature has a climbing or swimming speed. At the GM’s option, climbing a slippery vertical surface or one with few handholds requires a successful Strength (Athletics) check. Similarly, gaining any distance in rough water might require a successful Strength (Athletics) check.</p>
+                            <div>
+                                <button class="btn btn-primary mx-auto" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
+                            </div>
+                        </div>
+                        <div data-id="long-jump" class="movement-page no-display">
+                            <p><strong>Long Jump.</strong> When you make a long jump, you cover a number of feet up to your Strength score if you move at least 10 feet on foot immediately before the jump. When you make a standing long jump, you can leap only half that distance. Either way, each foot you clear on the jump costs a foot of movement. This rule assumes that the height of your jump doesn’t matter, such as a jump across a stream or chasm. At your GM’s option, you must succeed on a DC 10 Strength (Athletics) check to clear a low obstacle (no taller than a quarter of the jump’s distance), such as a hedge or low wall. Otherwise, you hit it. When you land in difficult terrain, you must succeed on a DC 10 Dexterity (Acrobatics) check to land on your feet. Otherwise, you land Prone.</p>
+                            <div>
+                                <button class="btn btn-primary mx-auto" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
+                            </div>
+                        </div>
+                        <div data-id="high-jump" class="movement-page no-display">
+                            <p><strong>High Jump.</strong> When you make a high jump, you leap into the air a number of feet equal to 3 + your Strength modifier if you move at least 10 feet on foot immediately before the jump. When you make a standing high jump, you can jump only half that distance. Either way, each foot you clear on the jump costs a foot of movement. In some circumstances, your GM might allow you to make a Strength (Athletics) check to jump higher than you normally can. You can extend your arms half your height above yourself during the jump. Thus, you can reach above you a distance equal to the height of the jump plus 1½ times your height.</p>
+                            <div>
+                                <button class="btn btn-primary mx-auto" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="travel" class="tab-pane card-block" role="tabpanel">
+                    <table class="table table-sm table-responsive">
+                        <thead>
+                            <tr>
+                                <th>Pace</th>
+                                <th>Minute</th>
+                                <th>Hour</th>
+                                <th>Day</th>
+                                <th>Effect</th>
+                            </tr>
+                            <tr>
+                                <td>Fast</td>
+                                <td>400 Feet</td>
+                                <td>4 Miles</td>
+                                <td>30 Miles</td>
+                                <td>-5 to passive perception</td>
+                            </tr>
+                            <tr>
+                                <td>Normal</td>
+                                <td>300 feet</td>
+                                <td>3 miles</td>
+                                <td>24 miles</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Slow</td>
+                                <td>200 feet</td>
+                                <td>2 miles</td>
+                                <td>18 miles</td>
+                                <td>Able to use stealth</td>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+                <div id="tracking" class="tab-pane card-block" role="tabpanel">
+                    <table class="table table-sm table-responsive">
+                        <thead>
+                            <th>Ground Surface</th>
+                            <th>DC</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Soft Surface (snow, sand, etc)</td>
+                                <td>10</td>
+                            </tr>
+                            <tr>
+                                <td>Dirt or Grass</td>
+                                <td>15</td>
+                            </tr>
+                            <tr>
+                                <td>Bare Stone</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>Each day since the creature passed</td>
+                                <td>+5</td>
+                            </tr>
+                            <tr>
+                                <td>Creature left a trail (blood, etc.)</td>
+                                <td>-5</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="card mt-4">
+                <div class="card-header">
+                    <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a href="#cover" class="nav-link active" data-toggle="tab" role="tab" aria-controls="cover">Cover</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#concealment" class="nav-link" data-toggle="tab" role="tab" aria-controls="concealment">Concealment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#vision-abilities" class="nav-link" data-toggle="tab" role="tab" aria-controls="vision-abilities">Vision Abilities</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-content card-block">
+                    <div id="cover" class="tab-pane active" role="tabpanel">
+                        <p><strong>Half cover</strong> grants a +2 bonus to AC and Dexterity saving throws. The cover might be a low wall, a large piece of furniture, a narrow tree trunk, or a creature, whether that creature is an enemy or a friend.</p>
+                        <p><strong>Three-quarters cover</strong> grants a +5 bonus to AC and Dexterity saving throws. The cover might be a portcullis, an arrow slit, or a thick tree trunk.</p>
+                        <p><strong>Total cover</strong> can’t be targeted directly by an attack or a spell, although some spells can reach such a target by including it in an area of effect. A target has total cover if it is completely concealed by an obstacle.</p>
+                    </div>
+                    <div id="concealment" class="tab-pane" role="tabpanel">
+                        <p>A <strong>Lightly Obscured</strong>, such as dim light, patchy fog, or moderate foliage, creatures have disadvantage on Wisdom (Perception) checks that rely on sight.</p>
+                        <p>A <strong>Heavily Obscured</strong>, —such as darkness, opaque fog, or dense foliage—blocks vision entirely. A creature effectively suffers from the blinded condition when trying to see something in that area.</p>
+                    </div>
+                    <div id="vision-abilities" class="tab-pane" role="tabpanel">
+                        <p><strong>Blindsight</strong> A creature with blindsight can perceive its surroundings without relying on sight, within a specific radius. Creatures without eyes, such as oozes, and creatures with echolocation or heightened senses, such as bats and true dragons, have this sense.</p>
+                        <p><strong>Darkvision</strong> Many creatures in fantasy gaming worlds, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
+                        <p><strong>Truesight</strong> A creature with truesight can, out to a specific range, see in normal and magical darkness, see invisible creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceives the original form of a shapechanger or a creature that is transformed by magic. Furthermore, the creature can see into the Ethereal Plane.</p>
+                    </div>
+                </div>
+        </div>
     </div>
     <div class="col-lg-7">
-        <div id="equipment" class="card h-100">
+        <div id="equipment" class="card">
             <div class="card-header">
                 <h4>Equipment</h4>
                 <ul class="nav nav-tabs card-header-tabs" role="tablist">
@@ -113,92 +264,605 @@
                     </li>
                 </ul>
             </div>
-            <div class="tab-content p-2">
+            <div class="tab-content card-block">
                 <div id="simple-weapons" class="tab-pane active" role="tabpanel">
-                    <table class="table table-sm">
+                    <table class="table table-sm table-responsive">
                         <thead>
-                            <tr><th>Name</th><th>Cost</th><th>Damage</th><th>Weight</th><th>Properties</th></tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Cost</th>
+                                <th>Damage</th>
+                                <th>Weight</th>
+                                <th>Properties</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <tr class="table-active"><td colspan="5" >Simple Melee Weapons</td></tr>
-                            <tr><td>Club</td><td>1 sp</td><td>1d4 bludgeoning</td><td>2 lb.</td><td>Light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button></td></tr>
-                            <tr><td>Dagger</td><td>2 gp</td><td>1d4 piercing</td><td>1 lb.</td><td>Finesse, light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button>, thrown (range 20/60)</td></tr>
-                            <tr><td>Greatclub</td> <td>2 sp</td> <td>1d8 bludgeoning</td> <td>10 lb.</td> <td>Two-handed</td></tr>
-                            <tr><td>Handaxe</td> <td>5 gp</td> <td>1d6 slashing</td> <td>2 lb.</td> <td>Light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button>, thrown (range 20/60)</td></tr>
-                            <tr><td>Javelin</td> <td>5 sp</td> <td>1d6 piercing</td> <td>2 lb.</td> <td>Thrown (range 30/120)</td></tr>
-                            <tr><td>Light hammer</td> <td>2 gp</td> <td>1d4 bludgeoning</td> <td>2 lb.</td> <td>Light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button>, thrown (range 20/60)</td></tr>
-                            <tr><td>Mace</td> <td>5 gp</td> <td>1d6 bludgeoning</td> <td>4 lb.</td> <td>—</td></tr>
-                            <tr><td>Quarterstaff</td> <td>2 sp</td> <td>1d6 bludgeoning</td> <td>4 lb.</td> <td>Versatile (1d8)</td></tr>
-                            <tr><td>Sickle</td> <td>1 gp</td> <td>1d4 slashing</td> <td>2 lb.</td> <td>Light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button></td></tr>
-                            <tr><td>Spear</td> <td>1 gp</td> <td>1d6 piercing</td> <td>3 lb.</td> <td>Thrown (range 20/60), versatile (1d8)</td></tr>
-                            <tr><td>Unarmed strike</td> <td>—</td> <td>1 bludgeoning</td> <td>—</td> <td>—</td></tr>
-                            <tr class="table-active"><td colspan="5">Simple Ranged Weapons</td></tr>
-                            <tr><td>Crossbow, light</td> <td>25 gp</td> <td>1d8 piercing</td> <td>5 lb.</td> <td>Ammunition (range 80/320), loading, two-handed</td></tr>
-                            <tr><td>Dart</td> <td>5 cp</td> <td>1d4 piercing</td> <td>1/4 lb.</td> <td>Finesse, thrown (range 20/60)</td></tr>
-                            <tr><td>Shortbow</td> <td>25 gp</td> <td>1d6 piercing</td> <td>2 lb.</td> <td>Ammunition (range 80/320), two-handed</td></tr>
-                            <tr><td>Sling</td> <td>1 sp</td><td>1d4 bludgeoning</td> <td>—</td> <td>Ammunition (range 30/120)</td></tr>
+                            <tr class="table-active">
+                                <td colspan="5">Simple Melee Weapons</td>
+                            </tr>
+                            <tr>
+                                <td>Club</td>
+                                <td>1 sp</td>
+                                <td>1d4 bludgeoning</td>
+                                <td>2 lb.</td>
+                                <td>Light <sup><button class="light-property" data-trigger="focus" data-toggle="popover">?</button></sup></td>
+                            </tr>
+                            <tr>
+                                <td>Dagger</td>
+                                <td>2 gp</td>
+                                <td>1d4 piercing</td>
+                                <td>1 lb.</td>
+                                <td>Finesse <sup><button class="finesse-property" data-trigger="focus" data-toggle="popover">?</button></sup>, light, thrown <sup><button class="thrown-property" data-trigger="focus" data-toggle="popover">?</button></sup> (range 20/60) <sup><button class="range-property" data-trigger="focus" data-toggle="popover" data-placement="left">?</button></sup></td>
+                            </tr>
+                            <tr>
+                                <td>Greatclub</td>
+                                <td>2 sp</td>
+                                <td>1d8 bludgeoning</td>
+                                <td>10 lb.</td>
+                                <td>Two-handed <sup><button class="two-handed-property" data-trigger="focus" data-toggle="popover">?</button></sup></td>
+                            </tr>
+                            <tr>
+                                <td>Handaxe</td>
+                                <td>5 gp</td>
+                                <td>1d6 slashing</td>
+                                <td>2 lb.</td>
+                                <td>Light, thrown (range 20/60)</td>
+                            </tr>
+                            <tr>
+                                <td>Javelin</td>
+                                <td>5 sp</td>
+                                <td>1d6 piercing</td>
+                                <td>2 lb.</td>
+                                <td>Thrown (range 30/120)</td>
+                            </tr>
+                            <tr>
+                                <td>Light hammer</td>
+                                <td>2 gp</td>
+                                <td>1d4 bludgeoning</td>
+                                <td>2 lb.</td>
+                                <td>Light, thrown (range 20/60)</td>
+                            </tr>
+                            <tr>
+                                <td>Mace</td>
+                                <td>5 gp</td>
+                                <td>1d6 bludgeoning</td>
+                                <td>4 lb.</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Quarterstaff</td>
+                                <td>2 sp</td>
+                                <td>1d6 bludgeoning</td>
+                                <td>4 lb.</td>
+                                <td>Versatile <sup><button class="versatile-property" data-trigger="focus" data-toggle="popover">?</button></sup> (1d8)</td>
+                            </tr>
+                            <tr>
+                                <td>Sickle</td>
+                                <td>1 gp</td>
+                                <td>1d4 slashing</td>
+                                <td>2 lb.</td>
+                                <td>Light</td>
+                            </tr>
+                            <tr>
+                                <td>Spear</td>
+                                <td>1 gp</td>
+                                <td>1d6 piercing</td>
+                                <td>3 lb.</td>
+                                <td>Thrown (range 20/60), versatile (1d8)</td>
+                            </tr>
+                            <tr>
+                                <td>Unarmed strike</td>
+                                <td>—</td>
+                                <td>1 bludgeoning</td>
+                                <td>—</td>
+                                <td>—</td>
+                            </tr>
+                            <tr class="table-active">
+                                <td colspan="5">Simple Ranged Weapons</td>
+                            </tr>
+                            <tr>
+                                <td>Crossbow, light</td>
+                                <td>25 gp</td>
+                                <td>1d8 piercing</td>
+                                <td>5 lb.</td>
+                                <td>Ammunition <sup><button class="ammunition-property" data-trigger="focus" data-toggle="popover">?</button></sup> (range 80/320), loading <sup><button class="loading-property" data-trigger="focus" data-toggle="popover" data-placement="left">?</button></sup>, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Dart</td>
+                                <td>5 cp</td>
+                                <td>1d4 piercing</td>
+                                <td>1/4 lb.</td>
+                                <td>Finesse, thrown (range 20/60)</td>
+                            </tr>
+                            <tr>
+                                <td>Shortbow</td>
+                                <td>25 gp</td>
+                                <td>1d6 piercing</td>
+                                <td>2 lb.</td>
+                                <td>Ammunition (range 80/320), two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Sling</td>
+                                <td>1 sp</td>
+                                <td>1d4 bludgeoning</td>
+                                <td>—</td>
+                                <td>Ammunition (range 30/120)</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div id="martial-weapons" class="tab-pane" role="tabpanel">
-                    <table class="table table-sm">
+                    <table class="table table-sm table-responsive">
                         <thead>
-                            <tr><th>Name</th><th>Cost</th><th>Damage</th><th>Weight</th><th>Properties</th></tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Cost</th>
+                                <th>Damage</th>
+                                <th>Weight</th>
+                                <th>Properties</th>
+                            </tr>
                         </thead>
                         <tbody>
-                            <tr class="table-active"><td colspan="5">Martial Melee Weapons</td></tr>
-                            <tr><td>Battleaxe</td> <td>10 gp</td> <td>1d8 slashing</td> <td>4 lb.</td> <td>Versatile (1d10)</td></tr>
-                            <tr><td>Flail</td> <td>10 gp</td> <td>1d8 bludgeoning</td> <td>2 lb.</td> <td>—</td></tr>
-                            <tr><td>Glaive</td> <td>20 gp</td> <td>1d10 slashing</td> <td>6 lb.</td> <td>Heavy, reach, two-handed</td></tr>
-                            <tr><td>Greataxe</td> <td>30 gp</td> <td>1d12 slashing</td> <td>7 lb.</td> <td>Heavy, two-handed</td></tr>
-                            <tr><td>Greatsword</td> <td>50 gp</td> <td>2d6 slashing</td> <td>6 lb.</td> <td>Heavy, two-handed</td></tr>
-                            <tr><td>Halberd</td> <td>20 gp</td> <td>1d10 slashing</td> <td>6 lb.</td> <td>Heavy, reach, two-handed</td></tr>
-                            <tr><td>Lance</td> <td>10 gp</td> <td>1d12 piercing</td> <td>6 lb.</td> <td>Reach, special</td></tr>
-                            <tr><td>Longsword</td> <td>15 gp</td> <td>1d8 slashing</td> <td>3 lb.</td> <td>Versatile (1d10)</td></tr>
-                            <tr><td>Maul</td> <td>10 gp</td> <td>2d6 bludgeoning</td> <td>10 lb.</td> <td>Heavy, two-handed</td></tr>
-                            <tr><td>Morningstar</td> <td>15 gp</td> <td>1d8 piercing</td> <td>4 lb.</td> <td>—</td></tr>
-                            <tr><td>Pike</td> <td>5 gp</td> <td>1d10 piercing</td> <td>18 lb.</td> <td>Heavy, reach, two-handed</td></tr>
-                            <tr><td>Rapier</td> <td>25 gp</td> <td>1d8 piercing</td> <td>2 lb.</td> <td>Finesse</td></tr>
-                            <tr><td>Scimitar</td> <td>25 gp</td> <td>1d6 slashing</td> <td>3 lb.</td> <td>Finesse, light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button></td></tr>
-                            <tr><td>Shortsword</td> <td>10 gp</td> <td>1d6 piercing</td> <td>2 lb.</td> <td>Finesse, light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button></td></tr>
-                            <tr><td>Trident</td> <td>5 gp</td> <td>1d6 piercing</td> <td>4 lb.</td> <td>Thrown (range 20/60), versatile (1d8)</td></tr>
-                            <tr><td>War pick</td> <td>5 gp</td> <td>1d8 piercing</td> <td>2 lb.</td> <td>—</td></tr>
-                            <tr><td>Warhammer</td> <td>15 gp</td> <td>1d8 bludgeoning</td> <td>2 lb.</td> <td>Versatile (1d10)</td></tr>
-                            <tr><td>Whip</td> <td>2 gp</td> <td>1d4 slashing</td> <td>3 lb.</td> <td>Finesse, reach</td></tr>
-                            <tr class="table-active"><td colspan="5">Martial Ranged Weapons</td></tr>
-                            <tr><td>Blowgun</td> <td>10 gp</td> <td>1 piercing</td> <td>1 lb.</td> <td>Ammunition (range 25/100), loading</td></tr>
-                            <tr><td>Crossbow, hand</td> <td>75 gp</td> <td>1d6 piercing</td> <td>3 lb.</td> <td>Ammunition (range 30/120), light<button class="light-property" data-trigger="focus" data-toggle="popover">i</button>, loading</td></tr>
-                            <tr><td>Crossbow, heavy</td> <td>50 gp</td> <td>1d10 piercing </td><td>18 lb.</td> <td>Ammunition (range 100/400), heavy, loading, two-handed</td></tr>
-                            <tr><td>Longbow</td> <td>50 gp</td> <td>1d8 piercing</td> <td>2 lb.</td> <td>Ammunition (range 150/600), heavy, two-handed</td></tr>
-                            <tr><td>Net</td> <td>1 gp</td> <td>—</td> <td>3 lb.</td> <td>Special, thrown (range 5/15)</td></tr>
+                            <tr class="table-active">
+                                <td colspan="5">Martial Melee Weapons</td>
+                            </tr>
+                            <tr>
+                                <td>Battleaxe</td>
+                                <td>10 gp</td>
+                                <td>1d8 slashing</td>
+                                <td>4 lb.</td>
+                                <td>Versatile (1d10)</td>
+                            </tr>
+                            <tr>
+                                <td>Flail</td>
+                                <td>10 gp</td>
+                                <td>1d8 bludgeoning</td>
+                                <td>2 lb.</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Glaive</td>
+                                <td>20 gp</td>
+                                <td>1d10 slashing</td>
+                                <td>6 lb.</td>
+                                <td>Heavy <sup><button class="heavy-property" data-trigger="focus" data-toggle="popover">?</button></sup>, reach <sup><button class="reach-property" data-trigger="focus" data-toggle="popover">?</button></sup>, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Greataxe</td>
+                                <td>30 gp</td>
+                                <td>1d12 slashing</td>
+                                <td>7 lb.</td>
+                                <td>Heavy, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Greatsword</td>
+                                <td>50 gp</td>
+                                <td>2d6 slashing</td>
+                                <td>6 lb.</td>
+                                <td>Heavy, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Halberd</td>
+                                <td>20 gp</td>
+                                <td>1d10 slashing</td>
+                                <td>6 lb.</td>
+                                <td>Heavy, reach, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Lance</td>
+                                <td>10 gp</td>
+                                <td>1d12 piercing</td>
+                                <td>6 lb.</td>
+                                <td>Reach, special <sup><button class="special-property" data-trigger="focus" data-toggle="popover">?</button></sup></td>
+                            </tr>
+                            <tr>
+                                <td>Longsword</td>
+                                <td>15 gp</td>
+                                <td>1d8 slashing</td>
+                                <td>3 lb.</td>
+                                <td>Versatile (1d10)</td>
+                            </tr>
+                            <tr>
+                                <td>Maul</td>
+                                <td>10 gp</td>
+                                <td>2d6 bludgeoning</td>
+                                <td>10 lb.</td>
+                                <td>Heavy, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Morningstar</td>
+                                <td>15 gp</td>
+                                <td>1d8 piercing</td>
+                                <td>4 lb.</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Pike</td>
+                                <td>5 gp</td>
+                                <td>1d10 piercing</td>
+                                <td>18 lb.</td>
+                                <td>Heavy, reach, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Rapier</td>
+                                <td>25 gp</td>
+                                <td>1d8 piercing</td>
+                                <td>2 lb.</td>
+                                <td>Finesse</td>
+                            </tr>
+                            <tr>
+                                <td>Scimitar</td>
+                                <td>25 gp</td>
+                                <td>1d6 slashing</td>
+                                <td>3 lb.</td>
+                                <td>Finesse, lighti</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Shortsword</td>
+                                <td>10 gp</td>
+                                <td>1d6 piercing</td>
+                                <td>2 lb.</td>
+                                <td>Finesse, light</td>
+                            </tr>
+                            <tr>
+                                <td>Trident</td>
+                                <td>5 gp</td>
+                                <td>1d6 piercing</td>
+                                <td>4 lb.</td>
+                                <td>Thrown (range 20/60), versatile (1d8)</td>
+                            </tr>
+                            <tr>
+                                <td>War pick</td>
+                                <td>5 gp</td>
+                                <td>1d8 piercing</td>
+                                <td>2 lb.</td>
+                                <td>—</td>
+                            </tr>
+                            <tr>
+                                <td>Warhammer</td>
+                                <td>15 gp</td>
+                                <td>1d8 bludgeoning</td>
+                                <td>2 lb.</td>
+                                <td>Versatile (1d10)</td>
+                            </tr>
+                            <tr>
+                                <td>Whip</td>
+                                <td>2 gp</td>
+                                <td>1d4 slashing</td>
+                                <td>3 lb.</td>
+                                <td>Finesse, reach</td>
+                            </tr>
+                            <tr class="table-active">
+                                <td colspan="5">Martial Ranged Weapons</td>
+                            </tr>
+                            <tr>
+                                <td>Blowgun</td>
+                                <td>10 gp</td>
+                                <td>1 piercing</td>
+                                <td>1 lb.</td>
+                                <td>Ammunition (range 25/100), loading</td>
+                            </tr>
+                            <tr>
+                                <td>Crossbow, hand</td>
+                                <td>75 gp</td>
+                                <td>1d6 piercing</td>
+                                <td>3 lb.</td>
+                                <td>Ammunition (range 30/120), light, loading</td>
+                            </tr>
+                            <tr>
+                                <td>Crossbow, heavy</td>
+                                <td>50 gp</td>
+                                <td>1d10 piercing </td>
+                                <td>18 lb.</td>
+                                <td>Ammunition (range 100/400), heavy, loading, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Longbow</td>
+                                <td>50 gp</td>
+                                <td>1d8 piercing</td>
+                                <td>2 lb.</td>
+                                <td>Ammunition (range 150/600), heavy, two-handed</td>
+                            </tr>
+                            <tr>
+                                <td>Net</td>
+                                <td>1 gp</td>
+                                <td>—</td>
+                                <td>3 lb.</td>
+                                <td>Special, thrown (range 5/15)</td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
                 <div id="armor" class="tab-pane" role="tabpanel">
-                    <table class="table table-sm">
+                    <table class="table table-sm table-responsive">
                         <thead>
-                            <tr><th>Name</th><th>Cost</th><th>Armor Class (AC)</th><th>Strength</th><th>Stealth</th><th>Weight</th></tr>
+                            <tr>
+                                <th>Name</th>
+                                <th>Cost</th>
+                                <th>Armor Class (AC)</th>
+                                <th>Strength</th>
+                                <th>Stealth</th>
+                                <th>Weight</th>
+                            </tr>
                         </thead>
-                        <tr class="table-active"><td colspan="6">Light Armor</td></tr>
-                        <tr><td>Padded</td> <td>5 gp</td> <td>11 + Dex modifier</td> <td>—</td> <td>Disadvantage</td> <td>8 lb.</td></tr>
-                        <tr><td>Leather</td> <td>10 gp</td> <td>11 + Dex modifier</td> <td>—</td> <td>—</td> <td>10 lb.</td></tr>
-                        <tr><td>Studded leather</td> <td>45 gp</td> <td>12 + Dex modifier</td> <td>—</td> <td>—</td> <td>13 lb.</td></tr>
-                        <tr class="table-active"><td colspan="6">Medium Armor</td></tr>
-                        <tr><td>Hide</td> <td>10 gp</td> <td>12 + Dex modifier (max 2)</td> <td>—</td> <td>—</td> <td>12 lb.</td></tr>
-                        <tr><td>Chain shirt</td> <td>50 gp</td> <td>13 + Dex modifier (max 2)</td> <td>—</td> <td>—</td> <td>20 lb.</td></tr>
-                        <tr><td>Scale mail</td> <td>50 gp</td> <td>14 + Dex modifier (max 2)</td> <td>—</td> <td>Disadvantage</td> <td>45 lb.</td></tr>
-                        <tr><td>Breastplate</td> <td>400 gp</td> <td>14 + Dex modifier (max 2)</td> <td>—</td> <td>—</td> <td>20 lb.</td></tr>
-                        <tr><td>Half plate</td> <td>750 gp</td> <td>15 + Dex modifier (max 2)</td> <td>—</td> <td>Disadvantage</td> <td>40 lb.</td></tr>
-                        <tr class="table-active"><td colspan="6">Heavy Armor</td></tr>
-                        <tr><td>Ring mail</td> <td>30 gp</td> <td>14</td> <td>—</td> <td>Disadvantage</td> <td>40 lb.</td></tr>
-                        <tr><td>Chain mail</td> <td>75 gp</td> <td>16</td> <td>Str 13</td> <td>Disadvantage</td> <td>55 lb.</td></tr>
-                        <tr><td>Splint</td> <td>200 gp</td> <td>17</td> <td>Str 15</td> <td>Disadvantage</td> <td>60 lb.</td></tr>
-                        <tr><td>Plate</td> <td>1,500 gp</td> <td>18</td> <td>Str 15</td> <td>Disadvantage</td> <td>65 lb.</td></tr>
-                        <tr class="table-active"><td colspan="6">Shield</td></tr>
-                        <tr><td>Shield</td> <td>10 gp</td> <td>+2</td> <td>—</td> <td>—</td> <td>6 lb.</td></tr>
+                        <tr class="table-active">
+                            <td colspan="6">Light Armor</td>
+                        </tr>
+                        <tr>
+                            <td>Padded</td>
+                            <td>5 gp</td>
+                            <td>11 + Dex modifier</td>
+                            <td>—</td>
+                            <td>Disadvantage</td>
+                            <td>8 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Leather</td>
+                            <td>10 gp</td>
+                            <td>11 + Dex modifier</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>10 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Studded leather</td>
+                            <td>45 gp</td>
+                            <td>12 + Dex modifier</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>13 lb.</td>
+                        </tr>
+                        <tr class="table-active">
+                            <td colspan="6">Medium Armor</td>
+                        </tr>
+                        <tr>
+                            <td>Hide</td>
+                            <td>10 gp</td>
+                            <td>12 + Dex modifier (max 2)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>12 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Chain shirt</td>
+                            <td>50 gp</td>
+                            <td>13 + Dex modifier (max 2)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>20 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Scale mail</td>
+                            <td>50 gp</td>
+                            <td>14 + Dex modifier (max 2)</td>
+                            <td>—</td>
+                            <td>Disadvantage</td>
+                            <td>45 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Breastplate</td>
+                            <td>400 gp</td>
+                            <td>14 + Dex modifier (max 2)</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>20 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Half plate</td>
+                            <td>750 gp</td>
+                            <td>15 + Dex modifier (max 2)</td>
+                            <td>—</td>
+                            <td>Disadvantage</td>
+                            <td>40 lb.</td>
+                        </tr>
+                        <tr class="table-active">
+                            <td colspan="6">Heavy Armor</td>
+                        </tr>
+                        <tr>
+                            <td>Ring mail</td>
+                            <td>30 gp</td>
+                            <td>14</td>
+                            <td>—</td>
+                            <td>Disadvantage</td>
+                            <td>40 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Chain mail</td>
+                            <td>75 gp</td>
+                            <td>16</td>
+                            <td>Str 13</td>
+                            <td>Disadvantage</td>
+                            <td>55 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Splint</td>
+                            <td>200 gp</td>
+                            <td>17</td>
+                            <td>Str 15</td>
+                            <td>Disadvantage</td>
+                            <td>60 lb.</td>
+                        </tr>
+                        <tr>
+                            <td>Plate</td>
+                            <td>1,500 gp</td>
+                            <td>18</td>
+                            <td>Str 15</td>
+                            <td>Disadvantage</td>
+                            <td>65 lb.</td>
+                        </tr>
+                        <tr class="table-active">
+                            <td colspan="6">Shield</td>
+                        </tr>
+                        <tr>
+                            <td>Shield</td>
+                            <td>10 gp</td>
+                            <td>+2</td>
+                            <td>—</td>
+                            <td>—</td>
+                            <td>6 lb.</td>
+                        </tr>
                     </table>
                 </div>
             </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Money</h4>
+                        <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                        <li class="nav-item">
+                            <a href="#exchange" class="nav-link active" data-toggle="tab" role="tab" aria-controls="exchange">Exchange</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#expenses" class="nav-link" data-toggle="tab" role="tab" aria-controls="expenses">Expenses</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#services" class="nav-link" data-toggle="tab" role="tab" aria-controls="services">Services</a>
+                        </li>
+                    </ul>
+                    </div>
+                    <div class="tab-content card-block">
+                        <div id="exchange" class="tab-pane active" role="tabpanel">
+                            <table class="table table-sm table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Coin</th>
+                                        <th>CP</th>
+                                        <th>SP</th>
+                                        <th>EP</th>
+                                        <th>GP</th>
+                                        <th>PP</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Copper (cp)</td>
+                                        <td>1</td>
+                                        <td>1/10</td>
+                                        <td>1/50</td>
+                                        <td>1/100</td>
+                                        <td>1/1,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Silver (sp)</td>
+                                        <td>10</td>
+                                        <td>1</td>
+                                        <td>1/5</td>
+                                        <td>1/10</td>
+                                        <td>1/100</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Electrum (ep)</td>
+                                        <td>50</td>
+                                        <td>10</td>
+                                        <td>1</td>
+                                        <td>1/2</td>
+                                        <td>1/20</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gold (gp)</td>
+                                        <td>100</td>
+                                        <td>10</td>
+                                        <td>2</td>
+                                        <td>1</td>
+                                        <td>1/10</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Platinum (pp)</td>
+                                        <td>1000</td>
+                                        <td>100</td>
+                                        <td>20</td>
+                                        <td>10</td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="expenses" class="tab-pane" role="tabpanel">
+                            <table class="table table-sm table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Lifestyle</th>
+                                        <th>Price/Day</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Wretched</td>
+                                        <td>—</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Squalid</td>
+                                        <td>1 sp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Poor</td>
+                                        <td>2 sp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Modest</td>
+                                        <td>1 gp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Comfortable</td>
+                                        <td>2 gp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wealthy</td>
+                                        <td>4 gp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Aristocratic</td>
+                                        <td>10 gp min</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div id="services" class="tab-pane" role="tabpanel">
+                            <table class="table table-sm table-responsive">
+                                <thead>
+                                    <tr>
+                                        <th>Service</th>
+                                        <th>Pay</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Coach Cab</td>
+                                        <td>1 cp within city, 3 cp/mile between towns</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Hireling</td>
+                                        <td>2 gp/day skilled, 2 sp/day unskilled</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Messenger</td>
+                                        <td>2 cp/mile  </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Road or gate toll</td>
+                                        <td>1 cp</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ship's passage</td>
+                                        <td>1 sp/mile</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header"></div>
+                    <div class="card-block"></div>
+                </div>
+            </div>
+            
         </div>
     </div>
 </article>

@@ -16,16 +16,30 @@ $(function () {
 $(function () {
   $('.finesse-property').popover({
     title: "Finesse Property",
-    content: "When making an attack with a finesse weapon, you use your choice o f your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls. Heavy. Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively."
+    content: "When making an attack with a finesse weapon, you use your choice o f your Strength or Dexterity modifier for the attack and damage rolls. You must use the same modifier for both rolls. "
+  })
+})
+
+$(function () {
+  $('.heavy-property').popover({
+    title: "Heavy Property",
+    content: "Small creatures have disadvantage on attack rolls with heavy weapons. A heavy weapon's size and bulk make it too large for a Small creature to use effectively."
   })
 })
 
 $(function () {
   $('.light-property').popover({
     title: "Light Property",
-    content: "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons. See the rules for two-weapon fighting in chapter 9. Loading. Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+    content: "A light weapon is small and easy to handle, making it ideal for use when fighting with two weapons."
   })
 })
+
+$(function () {
+  $('.loading-property').popover({
+    title: "Loading Property",
+    content: "Because of the time required to load this weapon, you can fire only one piece of ammunition from it when you use an action, bonus action, or reaction to fire it, regardless of the number of attacks you can normally make."
+    })
+});
 
 $(function () {
   $('.range-property').popover({
@@ -203,10 +217,10 @@ function goToPage(sender, pageClass) {
     var pages = Array.prototype.slice.call(document.getElementsByClassName(pageClass));
     for (index in pages) {
         if (target == pages[index].getAttribute("data-id")) {
-            pages[index].className = "card-block " + pageClass + " initial-display";
+            pages[index].className = pageClass + " initial-display";
         }
         else {
-            pages[index].className = "card-block " + pageClass + " no-display"
+            pages[index].className = pageClass + " no-display"
         }
     }
 }
