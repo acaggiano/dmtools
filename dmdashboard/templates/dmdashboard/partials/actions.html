@@ -1,9 +1,10 @@
 <article class="row mt-4">
     <div class="col-lg-5">
         <div id="actions" class="card">
-            <div class="card-block">
+            <div class="card-header">
+                <h5>Actions in Combat</h5></div>
+            <div class="card-body">
                 <div data-id="action-list" class="action_page inherit_display">
-                    <h4>Actions in Combat</h4>
                     <ul>
                         <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="attack">Attack</a></li>
                         <li><a href="javascript:void(0);" onclick="goToPage(this, 'action_page')" data-target="spell">Cast a Spell</a></li>
@@ -22,37 +23,37 @@
                     <p>The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists.</p>
                     <p>With this action, you make one melee or ranged attack. See the “Making an Attack” section for the rules that govern attacks.</p>
                     <p>Certain features, such as the Extra Attack feature of the fighter, allow you to make more than one attack with this action.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="spell" class="action_page no-display">
                     <h5>Cast a Spell</h5>
                     <p>Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Casting a spell is, therefore, not necessarily an action. Most spells do have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="dash" class="action_page no-display">
                     <h5>Dash</h5>
                     <p>When you take the Dash action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash.</p>
                     <p>Any increase or decrease to your speed changes this additional movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="disengage" class="action_page no-display">
                     <h5>Disengage</h5>
                     <p>If you take the Disengage action, your movement doesn't provoke opportunity attacks for the rest of the turn.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="dodge" class="action_page no-display">
                     <h5>Dodge</h5>
                     <p>When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated (as explained in appendix A) or if your speed drops to 0.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="help" class="action_page no-display">
@@ -60,15 +61,15 @@
                     <p>You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.</p>
                     <p>Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally's attack more effective. If your ally attacks the target before your next turn, the first attack roll is made with advantage.</p>
                     </p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="hide" class="action_page no-display">
                     <h5>Hide</h5>
                     <p>When you take the Hide action, you make a Dexterity (Stealth) check in an attempt to hide. If you succeed, you gain certain benefits.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="ready" class="action_page no-display">
@@ -77,22 +78,22 @@
                     <p>First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include “If the cultist steps on the trapdoor, I'll pull the lever that opens it,” and “If the goblin steps next to me, I move away.”</p>
                     <p>When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round.</p>
                     <p>When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration. If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="search" class="action_page no-display">
                     <h5>Search</h5>
                     <p>When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the DM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
                 <div data-id="use" class="action_page no-display">
                     <h5>Use an Object</h5>
                     <p>You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn.</p>
-                    <div class="mx-auto">
-                        <button class="btn" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
+                    <div class="text-center">
+                        <button class="btn btn-primary" onclick="goToPage(this, 'action_page')" data-target="action-list">Back to List</button>
                     </div>
                 </div>
             </div>
@@ -112,8 +113,8 @@
                 </ul>
             </div>
             <div class="tab-content">
-                <div id="movement" class="tab-pane active" role="tabpanel">
-                    <div class="card-block">
+                <div id="movement" class="tab-pane card-text active" role="tabpanel">
+                    <div class="card-body">
                         <div data-id="movement-list" class="movement-page">
                             <ul>
                                 <li><a href="javascript:void(0);" onclick="goToPage(this, 'movement-page')" data-target="speed">Speed</a></li>
@@ -126,30 +127,30 @@
                         <div data-id="speed" class="movement-page no-display">
                             <p><strong>Speed. </strong> Every character and monster has a speed, which is the distance in feet that the character or monster can walk in 1 round.</p>
                             <div>
-                                <button class="btn btn-primary mx-auto" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
+                                <button class="btn btn-primary text-center" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
                             </div>
                         </div>
                         <div data-id="climb" class="movement-page no-display">
                             <p><strong>Climbing, Swimming, Crawling</strong> While climbing or swimming, each foot of movement costs 1 extra foot (2 extra feet in difficult terrain), unless a creature has a climbing or swimming speed. At the GM’s option, climbing a slippery vertical surface or one with few handholds requires a successful Strength (Athletics) check. Similarly, gaining any distance in rough water might require a successful Strength (Athletics) check.</p>
                             <div>
-                                <button class="btn btn-primary mx-auto" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
+                                <button class="btn btn-primary text-center" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
                             </div>
                         </div>
                         <div data-id="long-jump" class="movement-page no-display">
                             <p><strong>Long Jump.</strong> When you make a long jump, you cover a number of feet up to your Strength score if you move at least 10 feet on foot immediately before the jump. When you make a standing long jump, you can leap only half that distance. Either way, each foot you clear on the jump costs a foot of movement. This rule assumes that the height of your jump doesn’t matter, such as a jump across a stream or chasm. At your GM’s option, you must succeed on a DC 10 Strength (Athletics) check to clear a low obstacle (no taller than a quarter of the jump’s distance), such as a hedge or low wall. Otherwise, you hit it. When you land in difficult terrain, you must succeed on a DC 10 Dexterity (Acrobatics) check to land on your feet. Otherwise, you land Prone.</p>
                             <div>
-                                <button class="btn btn-primary mx-auto" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
+                                <button class="btn btn-primary text-center" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
                             </div>
                         </div>
                         <div data-id="high-jump" class="movement-page no-display">
                             <p><strong>High Jump.</strong> When you make a high jump, you leap into the air a number of feet equal to 3 + your Strength modifier if you move at least 10 feet on foot immediately before the jump. When you make a standing high jump, you can jump only half that distance. Either way, each foot you clear on the jump costs a foot of movement. In some circumstances, your GM might allow you to make a Strength (Athletics) check to jump higher than you normally can. You can extend your arms half your height above yourself during the jump. Thus, you can reach above you a distance equal to the height of the jump plus 1½ times your height.</p>
                             <div>
-                                <button class="btn btn-primary mx-auto" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
+                                <button class="btn btn-primary text-center" onclick="goToPage(this, 'movement-page')" data-target="movement-list">Back to List</button>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div id="travel" class="tab-pane card-block" role="tabpanel">
+                <div id="travel" class="tab-pane card-text card-body" role="tabpanel">
                     <table class="table table-sm table-responsive">
                         <thead>
                             <tr>
@@ -184,7 +185,7 @@
                         <tbody></tbody>
                     </table>
                 </div>
-                <div id="tracking" class="tab-pane card-block" role="tabpanel">
+                <div id="tracking" class="tab-pane card-text card-body" role="tabpanel">
                     <table class="table table-sm table-responsive">
                         <thead>
                             <th>Ground Surface</th>
@@ -230,21 +231,36 @@
                         </li>
                     </ul>
                 </div>
-                <div class="tab-content card-block">
-                    <div id="cover" class="tab-pane active" role="tabpanel">
+                <div class="tab-content card-body">
+                    <div id="cover" class="tab-pane card-text active" role="tabpanel">
                         <p><strong>Half cover</strong> grants a +2 bonus to AC and Dexterity saving throws. The cover might be a low wall, a large piece of furniture, a narrow tree trunk, or a creature, whether that creature is an enemy or a friend.</p>
                         <p><strong>Three-quarters cover</strong> grants a +5 bonus to AC and Dexterity saving throws. The cover might be a portcullis, an arrow slit, or a thick tree trunk.</p>
                         <p><strong>Total cover</strong> can’t be targeted directly by an attack or a spell, although some spells can reach such a target by including it in an area of effect. A target has total cover if it is completely concealed by an obstacle.</p>
                     </div>
-                    <div id="concealment" class="tab-pane" role="tabpanel">
+                    <div id="concealment" class="tab-pane card-text" role="tabpanel">
                         <p>A <strong>Lightly Obscured</strong>, such as dim light, patchy fog, or moderate foliage, creatures have disadvantage on Wisdom (Perception) checks that rely on sight.</p>
                         <p>A <strong>Heavily Obscured</strong>, —such as darkness, opaque fog, or dense foliage—blocks vision entirely. A creature effectively suffers from the blinded condition when trying to see something in that area.</p>
                     </div>
-                    <div id="vision-abilities" class="tab-pane" role="tabpanel">
+                    <div id="vision-abilities" class="tab-pane card-text" role="tabpanel">
                         <p><strong>Blindsight</strong> A creature with blindsight can perceive its surroundings without relying on sight, within a specific radius. Creatures without eyes, such as oozes, and creatures with echolocation or heightened senses, such as bats and true dragons, have this sense.</p>
                         <p><strong>Darkvision</strong> Many creatures in fantasy gaming worlds, especially those that dwell underground, have darkvision. Within a specified range, a creature with darkvision can see in darkness as if the darkness were dim light, so areas of darkness are only lightly obscured as far as that creature is concerned. However, the creature can’t discern color in darkness, only shades of gray.</p>
                         <p><strong>Truesight</strong> A creature with truesight can, out to a specific range, see in normal and magical darkness, see invisible creatures and objects, automatically detect visual illusions and succeed on saving throws against them, and perceives the original form of a shapechanger or a creature that is transformed by magic. Furthermore, the creature can see into the Ethereal Plane.</p>
                     </div>
+                </div>
+        </div>
+        <div class="card mt-4">
+                <div class="card-header">
+                    Concentration
+                </div>
+                <div class="card-body">
+                    Some spells require you to maintain concentration in order to keep their magic active. If you lose concentration, such a spell ends.
+                    If a spell must be maintained with concentration, that fact appears in its Duration entry, and the spell specifies how long you can concentrate on it. You can end concentration at any time (no action required).
+                    Normal activity, such as moving and attacking, doesn’t interfere with concentration. The following factors can break concentration:
+                    <ul>
+                        <li><strong>Casting another spell that requires concentration.</strong> You lose concentration on a spell if you cast another spell that requires concentration. You can’t concentrate on two spells at once.</li>
+                        <li><strong>Taking damage.</strong> Whenever you take damage while you are concentrating on a spell, you must make a Constitution saving throw to maintain your concentration. The DC equals 10 or half thedamage you take, whichever number is higher. If you take damage from multiple sources, such as anarrow and a dragon’s breath, you make a separate saving throw for each source of damage.</li>
+                        <li><strong>Being incapacitated or killed.</strong> You lose concentration on a spell if you are incapacitated or if you die.</li>
+                    </ul>
                 </div>
         </div>
     </div>
@@ -264,8 +280,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="tab-content card-block">
-                <div id="simple-weapons" class="tab-pane active" role="tabpanel">
+            <div class="tab-content card-body">
+                <div id="simple-weapons" class="tab-pane card-text active" role="tabpanel">
                     <table class="table table-sm table-responsive">
                         <thead>
                             <tr>
@@ -391,7 +407,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="martial-weapons" class="tab-pane" role="tabpanel">
+                <div id="martial-weapons" class="tab-pane card-text" role="tabpanel">
                     <table class="table table-sm table-responsive">
                         <thead>
                             <tr>
@@ -574,7 +590,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div id="armor" class="tab-pane" role="tabpanel">
+                <div id="armor" class="tab-pane card-text" role="tabpanel">
                     <table class="table table-sm table-responsive">
                         <thead>
                             <tr>
@@ -723,8 +739,8 @@
                         </li>
                     </ul>
                     </div>
-                    <div class="tab-content card-block">
-                        <div id="exchange" class="tab-pane active" role="tabpanel">
+                    <div class="tab-content card-body">
+                        <div id="exchange" class="tab-pane card-text active" role="tabpanel">
                             <table class="table table-sm table-responsive">
                                 <thead>
                                     <tr>
@@ -780,7 +796,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="expenses" class="tab-pane" role="tabpanel">
+                        <div id="expenses" class="tab-pane card-text" role="tabpanel">
                             <table class="table table-sm table-responsive">
                                 <thead>
                                     <tr>
@@ -820,7 +836,7 @@
                                 </tbody>
                             </table>
                         </div>
-                        <div id="services" class="tab-pane" role="tabpanel">
+                        <div id="services" class="tab-pane card-text" role="tabpanel">
                             <table class="table table-sm table-responsive">
                                 <thead>
                                     <tr>
@@ -868,8 +884,8 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="tab-content card-block">
-                        <div id="traps" class="tab-pane active" role="tabpanel">
+                    <div class="tab-content card-body">
+                        <div id="traps" class="tab-pane card-text active" role="tabpanel">
                             <table class="table table-sm table-responsive">
                                 <tr>
                                     <th>Trap Danger</th>
@@ -893,7 +909,7 @@
                                 </tr>
                             </table>
                         </div>
-                        <div id="damage" class="tab-pane" role="tabpanel">
+                        <div id="damage" class="tab-pane card-text" role="tabpanel">
                             <table class="table table-sm table-responsive">
                                 <tr>
                                     <th>Character Level</th>

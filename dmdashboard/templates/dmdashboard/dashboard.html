@@ -19,7 +19,7 @@
         <div class="col-md-7">
             <div id="parties" class="card h-100">
                 <div class="card-header">
-                    <h4>{{ active.name }}</h4>
+                    <h5>{{ active.name }}</h5>
                     {% if active %}
                     
                     <ul class="nav nav-tabs card-header-tabs" id="party-tab" role="tablist">
@@ -30,7 +30,7 @@
                     {% endfor %} 
                     </ul>
                 </div>
-                <div class="card-block">
+                <div class="card-body">
                     <div class="tab-content">
                         {% for character in active_characters %}
                         <div class="tab-pane" id="{{character.slug}}" role="tabpanel">
@@ -77,11 +77,11 @@
             <div class="card h-100">
                 <div class="card-header">
                     <div class="row">
-                    <h4 class="col">Turn Order</h4>
+                    <h5 class="col">Turn Order</h5>
                     <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#initiatives-modal">Enter Initiatives</button>
                     </div>
                 </div>
-                <div class="card-block">
+                <div class="card-body">
                     <ol id="output"></ol>
                 </div>
             </div>

@@ -1,10 +1,12 @@
 <article class="row mt-4">
     <div class="col-lg-4">
         <div id="levels" class="card h-100">
-            <div class="card-block">
-                <h4>Level Chart</h4>
-                <div class="tab-content">
-                    <table id="low-levels" class="table table-sm text-center tab-pane active" role="tabpanel">
+            <div class="card-header">
+                <h5>Level Chart</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <table id="low-levels" class="w-50 table table-sm text-center card-text col">
                         <thead>
                             <tr>
                                 <th>Level</th>
@@ -65,7 +67,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <table id="high-levels" class="table table-sm text-center tab-pane" role="tabpanel">
+                    <table id="high-levels" class="w-50 table table-sm text-center card-text col">
                         <thead>
                             <tr>
                                 <th>Level</th>
@@ -128,18 +130,12 @@
                     </table>
                 </div>
             </div>
-            <div class="card-footer text-center">
-                <ul id="level-tabs" class="nav" role="tablist">
-                    <li class="nav-item mx-auto"><a class="nav-link btn btn-secondary" data-toggle="pill" href="#low-levels" role="tab" aria-controls="low-levels">Levels 1-10</a></li>
-                    <li class="nav-item mx-auto"><a class="nav-link btn btn-secondary" data-toggle="pill" href="#high-levels" role="tab" aria-controls="high-levels">Levels 11-20</a></li>
-                </ul>
-            </div>
         </div>
     </div>
     <div class="col-lg-4">
         <div id="abilities" class="card h-100">
         	<div class="card-header">
-                <h4>Abilities</h4>
+                <h5>Abilities</h5>
                 <ul class="nav nav-tabs card-header-tabs" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#skills" role="tab" aria-controls="skills">Skills</a>
@@ -152,9 +148,9 @@
                     </li>
                 </ul>
             </div>
-            <div class="card-block">
+            <div class="card-body">
             	<div class="tab-content">
-		            <div id="skills" class="tab-pane active" role="tabpanel">
+		            <div id="skills" class="tab-pane card-text active" role="tabpanel">
 		            	<div class="row">
 			                <div class="col-md-6">
 			                    <h6 class="list-group-item-heading">Strength</h6>
@@ -201,7 +197,7 @@
 			                </div>
 			            </div>
 		            </div>
-		            <div id="modifiers" class="tab-pane" role="tabpanel">
+		            <div id="modifiers" class="tab-pane card-text" role="tabpanel">
 		            	<table class="table table-sm">
 		            		<thead>
 		            			<tr><th>Score</th><th>Modifier</th><th>Score</th><th>Modifier</th>
@@ -258,7 +254,7 @@
 		            		</tbody>
 		            	</table>
 		            </div>
-		            <div id="grappling" class="tab-pane" role="tabpanel">
+		            <div id="grappling" class="tab-pane card-text" role="tabpanel">
 		            	<p>When you want to grab a creature or wrestle with it, you can use the Attack action to make a special melee attack, a grapple. If you’re able to make multiple attacks with the Attack action, this attack replaces one of them.</p>
 
 		            	<p>The target of your grapple must be no more than one size larger than you and must be within your reach. Using at least one free hand, you try to seize the target by making a grapple check instead of an attack roll: a Strength (Athletics) check contested by the target’s Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If you succeed, you subject the target to the Grappled condition. The condition specifies the things that end it, and you can release the target whenever you like (no action required).</p>
@@ -268,9 +264,9 @@
         </div>
     </div>
     <div class="col-lg-4">
-        <div id="conditions" class="card card-block h-100">
+        <div id="conditions" class="card card-body h-100">
             <div data-id="condition-list" class="condition_page inherit_display">
-                <h4>Conditions</h4>
+                <h5>Conditions</h5>
                 <ul>
                     <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="blinded">Blinded</a></li>
                     <li><a href="javascript:void(0);" onclick="goToPage(this, 'condition_page')" data-target="charmed">Charmed</a></li>
@@ -295,8 +291,8 @@
                     <li>A blinded creature can't see and automatically fails any ability check that requires sight.</li>
                     <li>Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="charmed" class="condition_page no-display">
@@ -305,8 +301,8 @@
                     <li>A charmed creature can't Attack the charmer or target the charmer with harmful Abilities or magical effects.</li>
                     <li>The charmer has advantage on any ability check to interact socially with the creature.</li>
                 </ul>
-                <div class="text-xs-center">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="deafened" class="condition_page no-display">
@@ -314,8 +310,8 @@
                 <ul>
                     <li>A deafened creature can't hear and automatically fails any ability check that requires hearing.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="exhaustion" class="condition_page no-display">
@@ -355,8 +351,8 @@
                     </tbody>
                 </table>
                 <p>Finishing a long rest reduces a creature's exhaustion level by 1, provided that the creature has also ingested some food and drink.</p>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="frightened" class="condition_page no-display">
@@ -365,8 +361,8 @@
                     <li>A frightened creature has disadvantage on Ability Checks and Attack rolls while the source of its fear is within line of sight.</li>
                     <li>The creature can't willingly move closer to the source of its fear.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="grappled" class="condition_page no-display">
@@ -376,8 +372,8 @@
                     <li>The condition ends if the Grappler is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>. </li>
                     <li>The condition also ends if an effect removes the grappled creature from the reach of the Grappler or Grappling effect, such as when a creature is hurled away by the Thunderwave spell.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="incapacitated" class="condition_page no-display">
@@ -385,8 +381,8 @@
                 <ul>
                     <li>An incapacitated creature can't take actions or reactions.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="invisible" class="condition_page no-display">
@@ -395,8 +391,8 @@
                     <li>An invisible creature is impossible to see without the aid of magic or a Special sense. For the purpose of Hiding, the creature is heavily obscured. The creature's location can be detected by any noise it makes or any tracks it leaves.</li>
                     <li>Attack rolls against the creature have disadvantage, and the creature's Attack rolls have advantage.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="paralyzed" class="condition_page no-display">
@@ -407,8 +403,8 @@
                     <li>Attack rolls against the creature have advantage.</li>
                     <li>Any Attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="petrified" class="condition_page no-display">
@@ -421,8 +417,8 @@
                     <li>The creature has Resistance to all damage.</li>
                     <li>The creature is immune to poison and disease, although a poison or disease already in its system is suspended, not neutralized.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
             <div data-id="poisoned" class="condition_page no-display">
@@ -430,44 +426,44 @@
                 <ul>
                     <li>A poisoned creature has disadvantage on Attack rolls and Ability Checks.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
-            <div data-id="prone" class="card-block condition_page no-display">
+            <div data-id="prone" class="card-body condition_page no-display">
                 <h5>Prone</h5>
                 <ul>
                     <li>A prone creature's only Movement option is to crawl, unless it stands up and thereby ends the condition.</li>
                     <li>The creature has disadvantage on Attack rolls.</li>
                     <li>An Attack roll against the creature has advantage if the attacker is within 5 feet of the creature. Otherwise, the Attack roll has disadvantage.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
-            <div data-id="restrained" class="card-block condition_page no-display">
+            <div data-id="restrained" class="card-body condition_page no-display">
                 <h5>Restrained</h5>
                 <ul>
                     <li>A restrained creature's speed becomes 0, and it can't benefit from any bonus to its speed.</li>
                     <li>Attack rolls against the creature have advantage, and the creature's Attack rolls have disadvantage.</li>
                     <li>The creature has disadvantage on Dexterity saving throws.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
-            <div data-id="stunned" class="card-block condition_page no-display">
+            <div data-id="stunned" class="card-body condition_page no-display">
                 <h5>Stunned</h5>
                 <ul>
                     <li>A stunned creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>, can't move, and can speak only falteringly.</li>
                     <li>The creature automatically fails Strength and Dexterity saving throws.</li>
                     <li>Attack rolls against the creature have advantage.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
-            <div data-id="unconscious" class="card-block condition_page no-display">
+            <div data-id="unconscious" class="card-body condition_page no-display">
                 <h5>Unconscious</h5>
                 <ul>
                     <li>An unconscious creature is <a href="javascript:void(0)" onclick="goToPage(this, 'condition_page')" data-target="incapacitated">incapacitated</a>, can't move or speak, and is unaware of its surroundings.</li>
@@ -476,8 +472,8 @@
                     <li>Attack rolls against the creature have advantage.</li>
                     <li>Any Attack that hits the creature is a critical hit if the attacker is within 5 feet of the creature.</li>
                 </ul>
-                <div class="mx-auto">
-                    <button class="btn" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
+                <div class="text-center">
+                    <button class="btn btn-primary" onclick="goToPage(this, 'condition_page')" data-target="condition-list">Back to List</button>
                 </div>
             </div>
         </div>
