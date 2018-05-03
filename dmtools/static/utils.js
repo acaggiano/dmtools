@@ -133,7 +133,7 @@ $("#register-form").submit(function(e) {
     console.log("registering");
     if($("#input2").val() != $("#checkinput").val()){
         $(".flash").html('Your passwords do not match!');
-        $(".flash").addClass('card-danger');
+        $(".flash").addClass('bg-danger');
         $(".flash").show();
     }
     else {
@@ -245,7 +245,7 @@ function log_in() {
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseText);
-            $(".flash").addClass('card-danger');
+            $(".flash").addClass('bg-danger');
             $(".flash").show();
         }
 
@@ -270,7 +270,7 @@ function register_user() {
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseText);
-            $(".flash").addClass('card-danger');
+            $(".flash").addClass('bg-danger');
             $(".flash").show();
         }
     });
@@ -293,8 +293,8 @@ function create_party() {
         },
         success: function(response) {
             $(".flash").html(response);
-            $(".flash").removeClass('card-danger');
-            $(".flash").addClass('card-success');
+            $(".flash").removeClass('bg-danger');
+            $(".flash").addClass('bg-success');
             $("#create-party").modal('hide');
             $(".flash").show().delay(3000).fadeOut();
             $('#parties').load(' #parties', function(){$(this).children().unwrap()})
@@ -302,8 +302,8 @@ function create_party() {
         error: function(xhr, errmsg, err) {
             $(".flash").html($("#party-name").val() + xhr.responseText);
             $("#party-name").val("");
-            $(".flash").removeClass('card-success');
-            $(".flash").addClass('card-danger');
+            $(".flash").removeClass('bg-success');
+            $(".flash").addClass('bg-danger');
             $(".flash").show().delay(3000).fadeOut();;
         }
     })
@@ -347,8 +347,8 @@ function edit_party(name) {
         },
         success: function(response) {
             $(".flash").html(response);
-            $(".flash").removeClass('card-danger');
-            $(".flash").addClass('card-success');
+            $(".flash").removeClass('bg-danger');
+            $(".flash").addClass('bg-success');
             $("#edit-party").modal('hide');
             $("#edit-party-name").val("");
             $(".flash").show().delay(3000).fadeOut();
@@ -357,8 +357,8 @@ function edit_party(name) {
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseJSON.message);
             $("#edit-party-name").val(xhr.responseJSON.original);
-            $(".flash").removeClass('card-success');
-            $(".flash").addClass('card-danger');
+            $(".flash").removeClass('bg-success');
+            $(".flash").addClass('bg-danger');
             $(".flash").show().delay(3000).fadeOut();;
         }
     })
@@ -382,15 +382,15 @@ function delete_party(name) {
         type: "DELETE",
         success: function(response) {
             $(".flash").html(response);
-            $(".flash").removeClass('card-danger');
-            $(".flash").addClass('card-success');
+            $(".flash").removeClass('bg-danger');
+            $(".flash").addClass('bg-success');
             $("#edit-party").modal('hide');
             $(".flash").show().delay(3000).fadeOut();
             $('#parties').load(' #parties', function(){$(this).children().unwrap()})
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseJSON.message);
-            $(".flash").addClass('card-danger');
+            $(".flash").addClass('bg-danger');
             $(".flash").show().delay(5000).fadeOut();
             $("#edit-character-form")[0].reset();
         }
@@ -418,7 +418,7 @@ function create_character() {
         },
         success: function(response) {
             $(".flash").html(response);
-            $(".flash").addClass('card-success');
+            $(".flash").addClass('bg-success');
             $("#create-character").modal('hide');
             $(".flash").show().delay(3000).fadeOut();
             $('#characters').load(' #characters', function(){$(this).children().unwrap()})
@@ -427,7 +427,7 @@ function create_character() {
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseText);
-            $(".flash").addClass('card-danger');
+            $(".flash").addClass('bg-danger');
             $(".flash").show().delay(5000).fadeOut();
             $("#create-character-form")[0].reset();
         }
@@ -479,7 +479,7 @@ function edit_character(name) {
         },
         success: function(response) {
             $(".flash").html(response);
-            $(".flash").addClass('card-success');
+            $(".flash").addClass('bg-success');
             $("#edit-character").modal('hide');
             $(".flash").show().delay(3000).fadeOut();
             $('#characters').load(' #characters', function(){$(this).children().unwrap()})
@@ -488,7 +488,7 @@ function edit_character(name) {
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseJSON.message);
-            $(".flash").addClass('card-danger');
+            $(".flash").addClass('bg-danger');
             $(".flash").show().delay(5000).fadeOut();
             $("#edit-character-form")[0].reset();
         }
@@ -513,14 +513,14 @@ function delete_character(name) {
         type: "DELETE",
         success: function(response) {
             $(".flash").html(response);
-            $(".flash").addClass('card-success');
+            $(".flash").addClass('bg-success');
             $("#edit-character").modal('hide');
             $(".flash").show().delay(3000).fadeOut();
             $('#characters').load(' #characters', function(){$(this).children().unwrap()})
         },
         error: function(xhr, errmsg, err) {
             $(".flash").html(xhr.responseJSON.message);
-            $(".flash").addClass('card-danger');
+            $(".flash").addClass('bg-danger');
             $(".flash").show().delay(5000).fadeOut();
             $("#edit-character-form")[0].reset();
         }
