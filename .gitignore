@@ -2,3 +2,4 @@
 /dmtools/local_settings.py
 /datadump.json
 /db.sqlite3
+/dmtools/__pycache__
