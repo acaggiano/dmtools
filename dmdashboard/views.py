@@ -10,8 +10,10 @@ from django.core.validators import validate_email
 import json
 from django.core import serializers
 
-from django.core.exceptions import ValidationError
+from django.core.exceptions import ValidationError#, DoesNotExist
 from django.db import IntegrityError
+
+from django.core.mail import EmailMessage
 
 from .models import Party, Character
 
@@ -31,8 +33,8 @@ def dashboard(request):
 		active_party = Party.objects.get(dm=user, active=True)
 		active_characters = Character.objects.filter(dm=user, party=active_party)
 	except Party.DoesNotExist:
-		active_party = False
-		active_characters = False
+		active_party = None
+		active_characters = []
 
 	all_characters = Character.objects.filter(dm=user)
 
@@ -47,10 +49,18 @@ def dashboard(request):
 @login_required
 def parties(request):
 	user = request.user
-
-	active = Party.objects.filter(dm=user).get(active=True)
-	parties = Party.objects.filter(dm=user).order_by('-active')
-	characters = Character.objects.filter(dm=user)
+	try:
+		parties = Party.objects.filter(dm=user).order_by('-active')
+	except Party.DoesNotExist:
+		parties = []
+	try:
+		active = Party.objects.filter(dm=user).get(active=True)
+	except Party.DoesNotExist:
+		active = None
+	try:
+		characters = Character.objects.filter(dm=user)
+	except Character.DoesNotExist:
+		characters = []
 
 	context = {
 		'active': active,
@@ -361,6 +371,29 @@ def register(request):
 				User = get_user_model()
 				try:
 					user = User.objects.create_user(email, password)
+					
+					# SEND MAIL
+					#send_mail(
+					#	subject='Welcome to DM Tools',
+					#	message='Your account has been successfully created',
+					#	from_email='anthony@mail.weodev.party',
+					#	recipient_list=[email],
+					#	html_message='<p>Your account has been successfully created',
+					#)
+					
+					registration_email = EmailMessage(
+						to=[
+							{
+								"address": email,
+								"subsitution_data": {
+									"email": email
+								}
+							}
+						],
+						from_email='anthony@mail.weodev.party'
+					)
+					registration_email.template = 'registration'
+					registration_email.send()
 					login(request, user)
 					response = {'status': 202, 'url':'/dashboard'}
 					return HttpResponse(json.dumps(response), content_type='application/json')
