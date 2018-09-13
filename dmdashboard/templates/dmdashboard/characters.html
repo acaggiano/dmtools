@@ -57,14 +57,14 @@
                 </div>
                 <div class="card-footer">
                     <div class="row">
-                        <div class="col-3">Party:</div>
+                        <div class="col-4">Party:</div>
                         <div class="col">{{ character.party }}</div>
                     </div>
                 </div>
             </div>
         </div>
     {% empty %}
-    <p>You ain't got no characters</p>
+    <p class="col text-center mt-5 lead">You haven't added any characters yet! <a href="" data-toggle="modal" data-target="#create-character">Create one now!</a></p>
     {% endfor %}
     </div>
 </div>

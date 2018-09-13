@@ -1,6 +1,11 @@
 from django.conf import settings
 from django.db import models
 from django.utils.text import slugify
+from django.core.exceptions import ValidationError
+
+def invalidate_blank(value):
+	if value == "":
+		raise ValidationError('Value cannot be blank')
 
 # Create your models here.
 class Party(models.Model):
@@ -17,6 +22,8 @@ class Party(models.Model):
 		return self.name
 
 	def save(self, *args, **kwargs):
+		invalidate_blank(self.name)
+			
 		self.slug = slugify(self.name)
 		super(Party, self).save()
 
@@ -32,7 +39,7 @@ class Party(models.Model):
 class Character(models.Model):
 	dm = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 	party = models.ForeignKey(Party, null=True, blank=True)
-	name = models.TextField()
+	name = models.TextField(validators=[invalidate_blank])
 	slug = models.TextField(blank=True)
 	race = models.TextField(null=True, blank=True)
 	char_class = models.TextField(null=True, blank=True)
@@ -62,5 +69,6 @@ class Character(models.Model):
 		return self.name
 
 	def save(self, *args, **kwargs):
+		invalidate_blank(self.name)
 		self.slug = slugify(self.name)
 		super(Character, self).save()

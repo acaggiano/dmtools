@@ -94,6 +94,10 @@ def create_party(request):
 		response = HttpResponse(' already exists!')
 		response.status_code = 400
 		return response
+	except ValidationError:
+		response = HttpResponse('Name cannot be blank!')
+		response.status_code = 400
+		return response
 
 @login_required
 def edit_party(request, party_slug):
@@ -213,6 +217,10 @@ def create_character(request):
 		response = HttpResponse(' already exists!')
 		response.status_code = 400
 		return response
+	except ValidationError:
+                response = HttpResponse('Name cannot be blank!')
+                response.status_code = 400
+                return response
 
 	return HttpResponse('UH OH')
 
