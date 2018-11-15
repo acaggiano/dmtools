@@ -130,8 +130,8 @@ USE_TZ = True
 #PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-STATIC_ROOT = '/var/www/html/dmtools.weodev.party/dmsite/static/'
+STATIC_ROOT = '/var/www/dmtools.weodev.party/dmsite/static/'
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/var/www/html/dmtools.weodev.party/dmsite/media/'
+MEDIA_ROOT = '/var/www/dmtools.weodev.party/dmsite/media/'
 MEDIA_URL = '/media/'

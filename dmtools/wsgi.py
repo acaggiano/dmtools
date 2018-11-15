@@ -12,8 +12,8 @@ import sys
 
 from django.core.wsgi import get_wsgi_application
 
-sys.path.append('/var/www/html/dmtools.weodev.party/dmsite/')
-sys.path.append('/var/www/html/dmtools.weodev.party/dmenv/lib/python3.5/sites-packages')
+sys.path.append('/var/www/dmtools.weodev.party/dmsite/')
+sys.path.append('/var/www/dmtools.weodev.party/dmenv/lib/python3.6/sites-packages')
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "dmtools.settings")
 
 application = get_wsgi_application()
