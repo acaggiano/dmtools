@@ -1,12 +1,4 @@
 dj-database-url==0.5.0
-Django==1.11.2
-django-custom-user==0.7
-django-extensions==1.7.9
-gunicorn==19.7.1
-psycopg2==2.7.5
-pytz==2017.2
-six==1.10.0
-dj-database-url==0.5.0
 Django==1.11.15
 django-custom-user==0.7
 django-extensions==1.7.9
